@@ -58,6 +58,7 @@ export default {
           payload: require(`./posts/${file}`)
         }
       })
-    }
+    },
+    fallback: true
   }
 }
