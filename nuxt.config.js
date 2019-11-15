@@ -52,10 +52,10 @@ export default {
   generate: {
     routes: function() {
       const fs = require('fs')
-      return fs.readdirSync('@/assets/content/blog').map(file => {
+      return fs.readdirSync('./posts/').map(file => {
         return {
           route: `/blog/${file.slice(2, -5)}`, // Remove the .json from the end of the filename
-          payload: require(`@/assets/content/blog/${file}`)
+          payload: require(`./posts/${file}`)
         }
       })
     }
