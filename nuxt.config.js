@@ -57,7 +57,7 @@ export default {
       const fs = require('fs')
       return fs.readdirSync('./posts/').map(file => {
         return {
-          route: `/blog/${file.slice(2, -5)}`, // Remove the .json from the end of the filename
+          route: `/posts/${file.slice(2, -5)}`, // Remove the .json from the end of the filename
           payload: require(`./posts/${file}`)
         }
       })
