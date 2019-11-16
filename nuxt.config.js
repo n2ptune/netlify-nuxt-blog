@@ -35,7 +35,10 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/markdownit'],
+  modules: [
+    '@nuxtjs/markdownit',
+    'nuxt-buefy'
+  ],
   /*
    ** Build configuration
    */
@@ -60,5 +63,8 @@ export default {
       })
     },
     fallback: true
+  },
+  buefy: {
+    /* buefy options */
   }
 }

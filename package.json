@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.7",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "nuxt-buefy": "^0.3.17"
   },
   "devDependencies": {
     "eslint-config-prettier": "^4.1.0",
