@@ -50,9 +50,23 @@ export default {
 
 <style scoped>
 .navbar {
-  border-bottom: 1px solid #ddd;
+  background-color: transparent !important;
 }
 .navbar-brand .navbar-item {
-  font-size: 1.4rem !important;
+  font-size: 1.4rem;
+}
+.navbar-item {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+a.navbar-item:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  background-color: transparent;
+}
+.navbar-burger {
+  color: white;
+  background-color: transparent;
+}
+.navbar-menu.is-active {
+  background-color: black;
 }
 </style>

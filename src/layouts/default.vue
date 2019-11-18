@@ -1,9 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="container">
-      <nuxt />
-    </div>
+    <nuxt />
   </div>
 </template>
 
@@ -18,8 +16,4 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  margin-top: 2.4rem;
-  margin-bottom: 2.4rem;
-}
 </style>
