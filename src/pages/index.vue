@@ -1,23 +1,27 @@
 <template>
   <div class="container">
-    <div class="columns is-desktop">
-      <div class="column is-12">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://firebasestorage.googleapis.com/v0/b/blog-n2ptune-xyz.appspot.com/o/images%2F193-1280x960.jpg?alt=media&token=fe9e5fa8-bb29-4996-8abc-fc1287466795" alt="">
-            </figure>
-          </div>
+    <div class="columns">
+      <div class="column is-mobile">
+        <div class="card is-full">
+          <img class="card-avatar" src="https://icon-library.net//images/web-developer-icon/web-developer-icon-10.jpg">
           <div class="card-content">
             <div class="media">
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img src="https://bulma.io/images/placeholders/96x96.png" :style="{ borderRadius: '50%' }">
+                  <img :src="avatarOfGithub" :style="{ borderRadius: '50%' }">
                 </figure>
               </div>
               <div class="media-content">
                 <p class="title is-4">n2ptune</p>
-                <p class="subtitle is-6">Web, Front-End Developer</p>
+                <p class="subtitle is-6 has-text-grey">Web, Front-End Developer</p>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-5">프로필</p>
+                <p class="subtitle is-6" :style="{ paddingTop: '10px' }">
+                  안녕하세요, 소개~
+                </p>
               </div>
             </div>
           </div>
@@ -29,15 +33,16 @@
 
 <script>
 export default {
+  async asyncData({ $axios }) {
+    const { data } = await $axios.get('https://api.github.com/users/n2ptune')
+    return {
+      avatarOfGithub: data.avatar_url
+    }
+  },
   head() {
     return {
       script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }]
     }
-  },
-  mounted() {
-    document.body.style.height = '100vh'
-    document.body.style.background = 'linear-gradient(210deg, #12c2e9, #c471ed, #f64f59)'
-    document.body.style.backgroundAttachment = 'fixed'
   }
 }
 </script>
@@ -48,6 +53,30 @@ export default {
   justify-content: center;
   align-items: center;
   height: 90vh;
-  /* height: 100vh; */
+}
+.card {
+  border-radius: 5px;
+}
+.columns {
+  width: 100%;
+}
+@media screen and (min-width: 769px) {
+  .columns {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .columns {
+    width: 60%;
+  }
+}
+.card-avatar {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: -25px;
+  width: 48px;
+  border-radius: 50%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.34);
 }
 </style>
