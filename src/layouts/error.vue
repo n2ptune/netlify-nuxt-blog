@@ -1,10 +1,11 @@
 <template>
   <div class="error-wrapper">
     <div class="icon-title-wrapper">
-      <span class="icon is-large">
-        <i class="mdi mdi-36px mdi-alert-circle-outline"></i>
-      </span>
-      <p class="error-title is-size-4">페이지에 에러가 발생하였습니다.</p>
+      <b-icon
+        icon="alert-circle-outline"
+        size="is-large"
+      />
+      <p class="error-title is-size-4" :style="{ paddingLeft: '5px' }">페이지에 에러가 발생하였습니다.</p>
     </div>
     <div class="error-description">
       내용 : {{ error.statusCode === 404 ? '해당 페이지를 찾을 수 없습니다.' : error.message }}
