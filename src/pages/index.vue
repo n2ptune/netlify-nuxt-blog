@@ -110,14 +110,14 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 96vh;
+  height: 94vh;
 }
 .card {
   border-radius: 5px;
 }
 @media screen and (max-width: 768px) {
   .container {
-    margin-top: 10rem;
+    top: 10rem;
     margin-bottom: 10rem;
   }
   .card {
@@ -142,6 +142,8 @@ export default {
   width: 48px;
   border-radius: 50%;
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.34);
+  background-color: white;
+  padding: 3px;
 }
 .github-link {
   text-decoration-style: dashed;
