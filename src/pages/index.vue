@@ -110,7 +110,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 96vh;
 }
 .card {
   border-radius: 5px;
@@ -120,8 +120,11 @@ export default {
 }
 @media screen and (max-width: 768px) {
   .container {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+  .card {
+    width: 95%;
   }
 }
 @media screen and (min-width: 769px) {

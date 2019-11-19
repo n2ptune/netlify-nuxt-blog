@@ -57,7 +57,6 @@ export default {
 <style scoped>
 .fixed-navbar {
   width: 100%;
-  position: fixed;
 }
 .navbar {
   background-color: transparent !important;

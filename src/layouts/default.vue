@@ -19,8 +19,8 @@ export default {
 .layout-wrapper {
   width: 100%;
   height: 100vh;
-  background-color: #4c4177;
   background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
   background-attachment: fixed !important;
+  overflow-y: scroll;
 }
 </style>
