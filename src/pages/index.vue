@@ -120,7 +120,6 @@ export default {
 }
 @media screen and (max-width: 768px) {
   .container {
-    height: auto;
     margin-top: 5rem;
     margin-bottom: 5rem;
   }
