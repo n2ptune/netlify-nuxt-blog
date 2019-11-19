@@ -1,5 +1,10 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation" :class="fixed ? 'fixed-navbar' : ''">
+  <nav
+    class="navbar"
+    role="navigation"
+    aria-label="main navigation"
+    :class="fixed ? 'fixed-navbar' : ''"
+  >
     <div class="container">
       <div class="navbar-brand">
         <a href="/" class="navbar-item">
@@ -40,8 +45,8 @@ export default {
   },
   mounted() {
     const el = document.querySelector('.navbar-burger')
-    
-    if(el) {
+
+    if (el) {
       el.addEventListener('click', () => {
         const dataTarget = el.dataset.target
         const $dataTarget = document.querySelector(`#${dataTarget}`)

@@ -47,14 +47,14 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) { }
   },
   srcDir: 'src/',
   markdownit: {
     injected: true
   },
   generate: {
-    routes: function() {
+    routes: function () {
       const fs = require('fs')
       return fs.readdirSync('./posts/').map(file => {
         return {
