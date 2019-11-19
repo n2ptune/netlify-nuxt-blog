@@ -114,7 +114,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 95vh;
+  height: 100%;
 }
 .container::-webkit-scrollbar {
   display: none;
