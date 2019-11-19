@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-    <div class="columns">
-      <div class="column is-mobile">
         <div class="card">
           <img
             class="card-avatar"
@@ -87,8 +85,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -114,7 +110,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
 }
 .container::-webkit-scrollbar {
   display: none;
@@ -122,21 +118,21 @@ export default {
 .card {
   border-radius: 5px;
 }
-.columns {
+.card {
   width: 100%;
 }
-@media screen and (max-width: 767.9px) {
+@media screen and (max-width: 768px) {
   .container {
-    height: auto;
+    margin-top: 5rem;
   }
 }
 @media screen and (min-width: 769px) {
-  .columns {
+  .card {
     width: 80%;
   }
 }
 @media screen and (min-width: 1024px) {
-  .columns {
+  .card {
     width: 60%;
   }
 }
