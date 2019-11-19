@@ -1,6 +1,6 @@
 <template>
   <div class="layout-wrapper">
-    <Header />
+    <Header :fixed="true" />
     <nuxt />
   </div>
 </template>
@@ -18,14 +18,9 @@ export default {
 <style scoped>
 .layout-wrapper {
   width: 100%;
-  min-height: 100%;
+  height: 100vh;
   background-color: #4c4177;
   background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
-  position: fixed;
-  /* overflow-y: auto; */
-  /* -ms-overflow-style: none; */
+  background-attachment: fixed !important;
 }
-/* .layout-wrapper::-webkit-scrollbar {
-  display: none;
-} */
 </style>

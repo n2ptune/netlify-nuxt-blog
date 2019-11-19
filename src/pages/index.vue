@@ -114,13 +114,13 @@ export default {
 }
 .card {
   border-radius: 5px;
-  height: auto;
 }
 .card {
   width: 100%;
 }
 @media screen and (max-width: 768px) {
   .container {
+    top: 50px;
     margin-top: 5rem;
     margin-bottom: 5rem;
   }
@@ -148,5 +148,8 @@ export default {
   text-decoration-style: dashed;
   text-decoration-line: underline;
   padding-bottom: 50px;
+}
+.media-content {
+  overflow: hidden;
 }
 </style>

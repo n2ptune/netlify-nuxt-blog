@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation" :class="fixed ? 'fixed-navbar' : ''">
     <div class="container">
       <div class="navbar-brand">
         <a href="/" class="navbar-item">
@@ -32,6 +32,12 @@
 
 <script>
 export default {
+  props: {
+    fixed: {
+      type: Boolean,
+      default: false
+    }
+  },
   mounted() {
     const el = document.querySelector('.navbar-burger')
     
@@ -49,6 +55,10 @@ export default {
 </script>
 
 <style scoped>
+.fixed-navbar {
+  width: 100%;
+  position: fixed;
+}
 .navbar {
   background-color: transparent !important;
 }
