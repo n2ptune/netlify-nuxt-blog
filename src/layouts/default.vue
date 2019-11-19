@@ -21,6 +21,6 @@ export default {
   height: 100vh;
   background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
   background-attachment: fixed !important;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 </style>
