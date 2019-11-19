@@ -124,6 +124,7 @@ export default {
 @media screen and (max-width: 768px) {
   .container {
     margin-top: 5rem;
+    margin-bottom: 5rem;
   }
 }
 @media screen and (min-width: 769px) {
@@ -152,5 +153,8 @@ export default {
 }
 .media-content {
   overflow-y: hidden;
+}
+.subtitle {
+  overflow-y: hidden
 }
 </style>
