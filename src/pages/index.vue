@@ -18,7 +18,7 @@
               Web, Front-End Developer<br />
               reduce@kakao.com<br />n2ptune@outlook.com
             </p>
-          </div>F
+          </div>
         </div>
         <div class="media">
           <div class="media-content">
