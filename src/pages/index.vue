@@ -115,9 +115,6 @@ export default {
 .card {
   border-radius: 5px;
 }
-.card {
-  width: 100%;
-}
 @media screen and (max-width: 768px) {
   .container {
     margin-top: 10rem;

@@ -55,9 +55,6 @@ export default {
 </script>
 
 <style scoped>
-.fixed-navbar {
-  width: 100%;
-}
 .navbar {
   background-color: transparent !important;
 }
@@ -65,17 +62,24 @@ export default {
   font-size: 1.4rem;
 }
 .navbar-item {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.7);
 }
 a.navbar-item:hover {
-  color: rgba(255, 255, 255, 1) !important;
+  color: rgba(255, 255, 255, 1);
   background-color: transparent;
 }
 .navbar-burger {
   color: white;
   background-color: transparent;
 }
+.navbar-burger span {
+  color: white;
+}
 .navbar-menu.is-active {
-  background-color: black;
+  background-color: white;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+.navbar-menu.is-active .navbar-item {
+  color: black;
 }
 </style>
