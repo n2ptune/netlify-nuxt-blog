@@ -114,7 +114,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
   height: 95vh;
 }
 .container::-webkit-scrollbar {
@@ -125,6 +124,11 @@ export default {
 }
 .columns {
   width: 100%;
+}
+@media screen and (max-width: 767.9px) {
+  .container {
+    height: auto;
+  }
 }
 @media screen and (min-width: 769px) {
   .columns {
@@ -149,5 +153,8 @@ export default {
   text-decoration-style: dashed;
   text-decoration-line: underline;
   padding-bottom: 50px;
+}
+.media-content {
+  overflow-y: hidden;
 }
 </style>
