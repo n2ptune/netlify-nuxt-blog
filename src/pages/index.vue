@@ -112,11 +112,9 @@ export default {
   align-items: center;
   height: 100vh;
 }
-.container::-webkit-scrollbar {
-  display: none;
-}
 .card {
   border-radius: 5px;
+  height: auto;
 }
 .card {
   width: 100%;
@@ -150,11 +148,5 @@ export default {
   text-decoration-style: dashed;
   text-decoration-line: underline;
   padding-bottom: 50px;
-}
-.media-content {
-  overflow-y: hidden;
-}
-.subtitle {
-  overflow-y: hidden
 }
 </style>
