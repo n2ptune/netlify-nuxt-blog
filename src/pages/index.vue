@@ -15,8 +15,7 @@
           <div class="media-content">
             <p class="title is-4">n2ptune</p>
             <p class="subtitle is-6 has-text-grey">
-              Web, Front-End Developer<br />
-              reduce@kakao.com<br />n2ptune@outlook.com
+              Web, Front-End Developer
             </p>
           </div>
         </div>
@@ -110,15 +109,16 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 94vh;
+  height: 100vh;
 }
 .card {
   border-radius: 5px;
+  padding-bottom: 1rem;
 }
 @media screen and (max-width: 768px) {
   .container {
-    top: 10rem;
-    margin-bottom: 10rem;
+    margin-top: 12rem;
+    padding-bottom: 10rem;
   }
   .card {
     width: 95%;

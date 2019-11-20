@@ -1,6 +1,6 @@
 <template>
-  <div class="layout-wrapper">
-    <Header :fixed="true" />
+  <div id="layout-wrapper">
+    <Header />
     <nuxt />
   </div>
 </template>
@@ -16,11 +16,13 @@ export default {
 </script>
 
 <style scoped>
-.layout-wrapper {
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
+#layout-wrapper {
+  background: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
   background-attachment: fixed !important;
-  overflow-y: auto;
+}
+@media screen and (max-width: 768px) {
+  #layout-wrapper {
+    /* min-height: 100%; */
+  }
 }
 </style>
