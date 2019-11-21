@@ -89,9 +89,13 @@
 <script>
 export default {
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('https://api.github.com/users/n2ptune')
-    return {
-      avatarOfGithub: data.avatar_url
+    try {
+      const { data } = await $axios.get('https://api.github.com/users/n2ptune')
+      return {
+        avatarOfGithub: data.avatar_url || ''
+      }
+    } catch(e) {
+      console.log(e)
     }
   },
   head() {

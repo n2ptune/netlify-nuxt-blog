@@ -7,9 +7,9 @@
   >
     <div class="container">
       <div class="navbar-brand">
-        <a href="/" class="navbar-item">
-          N.WEB
-        </a>
+        <nuxt-link to="/" class="navbar-item" exact>
+          n2ptune-dev
+        </nuxt-link>
 
         <a
           role="button"
@@ -26,9 +26,15 @@
 
       <div id="navbarMenus" class="navbar-menu">
         <div class="navbar-end">
-          <a class="navbar-item">
-            Pinned
-          </a>
+          <nuxt-link to="/posts" class="navbar-item">
+            ALL
+          </nuxt-link>
+          <nuxt-link to="/new" class="navbar-item">
+            NEW
+          </nuxt-link>
+          <nuxt-link to="/pinned" class="navbar-item">
+            PINNED
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -59,7 +65,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .navbar {
   background-color: transparent !important;
 }
@@ -68,23 +74,31 @@ export default {
 }
 .navbar-item {
   color: rgba(255, 255, 255, 0.7);
-}
-a.navbar-item:hover {
-  color: rgba(255, 255, 255, 1);
   background-color: transparent;
+
+  &:hover, &:visited {
+    color: rgba(255, 255, 255, 1);
+    background-color: transparent;
+  }
+
+  &:active, &:focus {
+    background-color: transparent;
+  }
 }
 .navbar-burger {
   color: white;
   background-color: transparent;
-}
-.navbar-burger span {
-  color: white;
+
+  & span {
+    color: white; 
+  }
 }
 .navbar-menu.is-active {
   background-color: white;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
-}
-.navbar-menu.is-active .navbar-item {
-  color: black;
+
+  & .navbar-item {
+    color: black;
+  }
 }
 </style>
