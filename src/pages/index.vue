@@ -94,15 +94,15 @@ export default {
       return {
         avatarOfGithub: data.avatar_url || ''
       }
-    } catch(e) {
+    } catch (e) {
       console.log(e)
     }
   },
   head() {
     return {
-      script: [
-        { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
-      ]
+      // script: [
+      //   { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
+      // ]
     }
   }
 }

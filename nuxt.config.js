@@ -16,7 +16,13 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      { rel: 'apple-touch-icon-precomposed', href: '/favicon.png' }
+      { rel: 'apple-touch-icon-precomposed', href: '/favicon.png' },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href:
+          'https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css'
+      }
     ]
   },
   /*
@@ -26,7 +32,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/utils.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -38,11 +44,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/markdownit',
-    'nuxt-buefy'
-  ],
+  modules: ['@nuxtjs/axios', '@nuxtjs/markdownit', 'nuxt-buefy'],
   /*
    ** Build configuration
    */
@@ -50,14 +52,14 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) { }
+    extend(config, ctx) {}
   },
   srcDir: 'src/',
   markdownit: {
     injected: true
   },
   generate: {
-    routes: function () {
+    routes: function() {
       const fs = require('fs')
       return fs.readdirSync('./posts/').map(file => {
         return {
@@ -70,5 +72,6 @@ export default {
   },
   buefy: {
     /* buefy options */
+    materialDesignIcons: false
   }
 }

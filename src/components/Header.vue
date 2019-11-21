@@ -8,6 +8,7 @@
     <div class="container">
       <div class="navbar-brand">
         <nuxt-link to="/" class="navbar-item" exact>
+          <b-icon icon="pine-tree" />
           n2ptune-dev
         </nuxt-link>
 
@@ -27,13 +28,16 @@
       <div id="navbarMenus" class="navbar-menu">
         <div class="navbar-end">
           <nuxt-link to="/posts" class="navbar-item">
-            ALL
+            <b-icon icon="notification-clear-all" />
+            <span>ALL</span>
           </nuxt-link>
           <nuxt-link to="/new" class="navbar-item">
-            NEW
+            <b-icon icon="post" />
+            <span>NEW</span>
           </nuxt-link>
           <nuxt-link to="/pinned" class="navbar-item">
-            PINNED
+            <b-icon icon="pin" />
+            <span>PINNED</span>
           </nuxt-link>
         </div>
       </div>
@@ -76,12 +80,14 @@ export default {
   color: rgba(255, 255, 255, 0.7);
   background-color: transparent;
 
-  &:hover, &:visited {
+  &:hover,
+  &:visited {
     color: rgba(255, 255, 255, 1);
     background-color: transparent;
   }
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     background-color: transparent;
   }
 }
@@ -90,7 +96,7 @@ export default {
   background-color: transparent;
 
   & span {
-    color: white; 
+    color: white;
   }
 }
 .navbar-menu.is-active {
@@ -99,6 +105,14 @@ export default {
 
   & .navbar-item {
     color: black;
+    transition: background, 0.25s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
   }
+}
+.navbar-item > .icon {
+  margin-right: 5px;
 }
 </style>
