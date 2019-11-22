@@ -1,6 +1,9 @@
 <template>
   <div id="layout-wrapper">
     <posts-header />
+    <main>
+      <nuxt />
+    </main>
   </div>
 </template>
 
@@ -11,3 +14,16 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+main::before {
+  position: absolute;
+  display: block;
+  background: #121230;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 264px;
+  content: ' ';
+}
+</style>

@@ -27,13 +27,9 @@
 
       <div id="navbarMenus" class="navbar-menu">
         <div class="navbar-end">
-          <nuxt-link to="/posts" class="navbar-item">
-            <b-icon icon="notification-clear-all" />
-            <span>ALL</span>
-          </nuxt-link>
           <nuxt-link to="/new" class="navbar-item">
             <b-icon icon="post" />
-            <span>NEW</span>
+            <span>POSTS</span>
           </nuxt-link>
           <nuxt-link to="/pinned" class="navbar-item">
             <b-icon icon="pin" />
@@ -79,11 +75,12 @@ export default {
 .navbar-item {
   color: rgba(255, 255, 255, 0.7);
   background-color: transparent;
+  transition: background 0.35s;
 
   &:hover,
   &:visited {
     color: rgba(255, 255, 255, 1);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
   &:active,
