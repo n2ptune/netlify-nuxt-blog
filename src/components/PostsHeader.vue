@@ -65,5 +65,8 @@ export default {
     margin-left: auto;
     margin-right: auto;
   }
+  .cur-route {
+    display: block;
+  }
 }
 </style>
