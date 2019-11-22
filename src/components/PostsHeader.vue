@@ -1,8 +1,5 @@
 <template>
   <header class="header">
-    <!-- <div class="header-logo my-auto">
-      <span class="is-size-5">n2ptune-dev</span>
-    </div> -->
     <div class="container">
       <div class="header-logo">
         <nuxt-link class="is-size-5" to="/">n2ptune-dev</nuxt-link>
@@ -16,7 +13,7 @@
 export default {
   computed: {
     routeTitle() {
-      const { path } =  this.$nuxt.$router.currentRoute
+      const { path } = this.$nuxt.$router.currentRoute
       return path === '/new' ? '/ ALL POSTS' : '/ PINNED POSTS'
     }
   }
@@ -40,13 +37,10 @@ export default {
   transition: all 0.35s;
 
   &-logo {
-    // margin-top: 15px;
-
     & .cur-route {
       margin-left: 5px;
       color: rgba(255, 255, 255, 1);
     }
-
     & a {
       color: rgba(255, 255, 255, 0.55);
       transition: color 0.25s;
@@ -66,7 +60,6 @@ export default {
     margin-right: auto;
   }
   .cur-route {
-    // current
     display: block;
   }
 }

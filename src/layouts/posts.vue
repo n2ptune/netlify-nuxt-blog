@@ -16,14 +16,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main::before {
-  position: absolute;
-  display: block;
-  background: #121230;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 264px;
-  content: ' ';
+main {
+  margin-top: 7rem;
+
+  &::before {
+    position: absolute;
+    display: block;
+    background: #121230;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 264px;
+    content: ' ';
+  }
 }
 </style>
