@@ -13,8 +13,8 @@
 export default {
   computed: {
     routeTitle() {
-      const { path } = this.$nuxt.$router.currentRoute
-      return path === '/new' ? '/ ALL POSTS' : '/ PINNED POSTS'
+      const { name } = this.$nuxt.$router.currentRoute
+      return name === 'new' ? '/ ALL POSTS' : '/ PINNED POSTS'
     }
   }
 }
