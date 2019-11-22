@@ -66,6 +66,7 @@ export default {
     margin-right: auto;
   }
   .cur-route {
+    // current
     display: block;
   }
 }
