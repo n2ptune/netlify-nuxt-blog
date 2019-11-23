@@ -14,7 +14,7 @@ export default {
   computed: {
     routeTitle() {
       const { name } = this.$nuxt.$router.currentRoute
-      return name === 'new' ? '/ ALL POSTS' : '/ PINNED POSTS'
+      return name === 'new' ? 'ALL POSTS' : 'PINNED POSTS'
     }
   }
 }
