@@ -4,7 +4,6 @@
     <main>
       <nuxt />
     </main>
-    <posts-footer />
   </div>
 </template>
 
@@ -12,7 +11,6 @@
 export default {
   components: {
     PostsHeader: () => import('@/components/PostsHeader'),
-    PostsFooter: () => import('@/components/PostsFooter')
   }
 }
 </script>
@@ -20,7 +18,8 @@ export default {
 <style lang="scss" scoped>
 main {
   overflow-y: auto;
-  background-color: rgba(0, 0, 0, 0.05);
+  // background-color: rgba(0, 0, 0, 0.05);
+  background-color: white;
   height: 100%;
   margin-top: 7rem;
 

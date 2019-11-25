@@ -32,7 +32,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/utils-margin.scss'],
+  css: ['@/assets/utils-margin.scss', '@/assets/utils.scss'],
   /*
    ** Plugins to load before mounting the App
    */

@@ -2,6 +2,12 @@ export const state = () => ({
   blogPosts: []
 })
 
+export const getters = {
+  sortNewPosts(state) {
+    
+  }
+}
+
 export const mutations = {
   setBlogPosts(state, list) {
     state.blogPosts = list
