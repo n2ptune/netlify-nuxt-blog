@@ -49,7 +49,7 @@
             <p class="title is-5">블로그 정보</p>
             <div class="subtitle-content">
               <p class="subtitle is-6">
-                <span class="has-text-primary has-text-weight-bold"
+                <span class="has-text-primary has-text-weight-semibold"
                   >블로그에서 다루는 내용</span
                 >은 웹 전반에 대한 기술의 지식입니다. 다음과 같은 내용들을
                 포함할 수 있습니다.
@@ -108,7 +108,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .container {
   display: flex;
   justify-content: center;
@@ -153,6 +153,11 @@ export default {
   text-decoration-style: dashed;
   text-decoration-line: underline;
   padding-bottom: 50px;
+  color: #0000b5;
+
+  &:hover {
+    color: #3d3df2;
+  }
 }
 .media-content {
   overflow: hidden;

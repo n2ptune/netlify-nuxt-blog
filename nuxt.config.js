@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    titleTemplate: '%s | n2ptune web tech-dev',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -32,11 +32,15 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/utils-margin.scss', '@/assets/utils.scss'],
+  css: [
+    '@/assets/utils-margin.scss',
+    '@/assets/utils.scss',
+    '@/assets/variables.scss'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/day'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -72,6 +76,7 @@ export default {
   },
   buefy: {
     /* buefy options */
-    materialDesignIcons: false
+    materialDesignIcons: false,
+    css: false
   }
 }

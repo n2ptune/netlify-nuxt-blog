@@ -1,41 +1,48 @@
 <template>
   <div class="container">
-    <div class="card">
-      <div class="card-header">
-        <div class="card-header-title">
-          - NEW
-        </div>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="is-size-5" v-for="dummy in 20" :key="dummy">Size</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <PostCard :posts="sortNewPosts" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  head() {
+    return {
+      title: 'New Posts'
+    }
+  },
+  components: {
+    PostCard: () => import('@/components/PostCard')
+  },
   layout: 'posts',
-  mounted() {
-    document.querySelectorAll('.card').forEach((node => {
-      node.classList.add('mb-2')
-    }))
+  computed: {
+    ...mapGetters(['sortNewPosts'])
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .container {
     margin-left: 10px;
     margin-right: 10px;
   }
 }
-.card {
-  border-radius: 5px;
+@media screen and (min-width: 1025px) {
+  .container {
+    width: 72%;
+  }
+}
+@media screen and (min-width: 1425px) {
+  .container {
+    width: 55%;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .container {
+    width: 40%;
+  }
 }
 </style>

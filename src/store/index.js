@@ -4,7 +4,11 @@ export const state = () => ({
 
 export const getters = {
   sortNewPosts(state) {
-    
+    const newArr = Array.from(state.blogPosts)
+    return newArr.sort((a, b) => {
+      const [aT, bT] = [a.date, b.date]
+      return aT < bT ? 1 : -1
+    })
   }
 }
 
