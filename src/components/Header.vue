@@ -31,10 +31,6 @@
             <b-icon icon="post" />
             <span>POSTS</span>
           </nuxt-link>
-          <nuxt-link to="/pinned" class="navbar-item">
-            <b-icon icon="pin" />
-            <span>PINNED</span>
-          </nuxt-link>
         </div>
       </div>
     </div>
@@ -100,12 +96,16 @@ export default {
   background-color: white;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
 
-  & .navbar-item {
+  & .navbar-item {  
     color: black;
-    transition: background, 0.25s;
+    transition: background, 0.35s;
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    & .icon {
+      vertical-align: bottom;
     }
   }
 }
