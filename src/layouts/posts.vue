@@ -20,10 +20,9 @@ html, body, #__nuxt, #__layout, #layout-wrapper {
   height: 100%;
 }
 main {
-  overflow-y: auto;
-  background-color: rgb(241, 243, 245);
-  height: 100%;
+  height: auto;
   margin-top: 7rem;
+  background-color: rgb(241, 243, 245);
 
   &::before {
     position: absolute;
