@@ -27,11 +27,11 @@ main {
   &::before {
     position: absolute;
     display: block;
-    background: #121230;
+    background: linear-gradient(to bottom right, #121230, #003458);
     left: 0;
     top: 0;
     width: 100%;
-    height: 264px;
+    height: 300px;
     content: ' ';
   }
 

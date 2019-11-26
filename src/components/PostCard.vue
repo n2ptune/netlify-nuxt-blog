@@ -6,7 +6,10 @@
     <div class="card" v-for="post in posts" :key="post.slug">
       <div class="card-image">
         <figure class="image is-2by1">
-          <img :src="checkThumbnail(post.thumbnail)" alt="" />
+          <nuxt-link :to="`/posts/${post.slug}`" class="img-route">
+            <img :src="checkThumbnail(post.thumbnail)" :alt="post.title" />
+            <div class="thumbnail-background"></div>
+          </nuxt-link>
         </figure>
       </div>
       <div class="card-header">
@@ -18,7 +21,11 @@
             <p class="is-size-5">{{ post.title }}</p>
           </nuxt-link>
           <p class="is-size-6 has-text-grey has-text-weight-light">
-            <b-icon icon="file-replace-outline" size="is-small" :style="{ marginRight: '3px' }" />{{ dateToDay(post.date) }}
+            <b-icon
+              icon="file-replace-outline"
+              size="is-small"
+              :style="{ marginRight: '3px' }"
+            />{{ dateToDay(post.date) }}
           </p>
         </div>
         <div class="card-header-icon">
@@ -29,6 +36,21 @@
         </div>
       </div>
       <div class="card-content">
+        <div
+          v-if="post.tags"
+          class="tags-wrapper mb-1"
+          :style="{ justifyContent: 'center', alignItems: 'center' }"
+        >
+          <b-icon icon="tag" :style="{ color: '#00498c' }" />
+          <nuxt-link
+            v-for="tag in post.tags"
+            :key="tag"
+            :to="`/tags/${tag}`"
+            class="tag-custom is-size-5"
+            :style="{ marginRight: '0.3rem', marginLeft: '0.3rem' }"
+            >{{ tag }}</nuxt-link
+          >
+        </div>
         <p class="is-size-6">
           {{ post.description }}
         </p>
@@ -66,7 +88,8 @@ export default {
 .card-wrapper {
   height: 100%;
 }
-a {
+.card-header-title a,
+.card-header-icon a {
   color: #171785;
   padding: 5px;
   border-radius: 8px;
@@ -75,7 +98,27 @@ a {
     background-color: rgba(0, 0, 0, 0.15);
   }
 }
+.tag-custom {
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  background-color: #1e6dcc;
+}
 .card-header-icon > a {
   font-size: 0.9rem;
+}
+.thumbnail-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background, 0.35s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
 }
 </style>
