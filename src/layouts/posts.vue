@@ -15,11 +15,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+html, body, #__nuxt, #__layout, #layout-wrapper {
+  height: 100%;
+}
 main {
   overflow-y: auto;
-  // background-color: rgba(0, 0, 0, 0.05);
-  background-color: white;
+  background-color: rgb(241, 243, 245);
   height: 100%;
   margin-top: 7rem;
 
