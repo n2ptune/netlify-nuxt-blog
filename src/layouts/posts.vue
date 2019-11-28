@@ -15,10 +15,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
-html, body, #__nuxt, #__layout, #layout-wrapper {
-  height: 100%;
-}
+<style lang="scss" scoped>
+// html, body, #__nuxt, #__layout, #layout-wrapper {
+//   height: 100%;
+// }
 main {
   height: auto;
   margin-top: 7rem;
