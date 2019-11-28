@@ -41,14 +41,13 @@
           class="tags-wrapper mb-1"
           :style="{ justifyContent: 'center', alignItems: 'center' }"
         >
-          <b-icon icon="tag" :style="{ color: '#00498c' }" />
+          <b-icon icon="tag" size="is-small" :style="{ color: '#00498c' }" alt="태그" />
           <nuxt-link
             v-for="tag in post.tags"
             :key="tag"
             :to="`/tags/${tag}`"
-            class="tag-custom is-size-5"
-            :style="{ marginRight: '0.3rem', marginLeft: '0.3rem' }"
-            >{{ tag }}</nuxt-link
+            class="tag-custom is-size-6"
+            >{{ `#${tag}` }}</nuxt-link
           >
         </div>
         <p class="is-size-6">
@@ -103,6 +102,8 @@ export default {
   padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
   border-radius: 5px;
   background-color: #1e6dcc;
 }

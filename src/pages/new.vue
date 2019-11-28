@@ -1,8 +1,6 @@
 <template>
   <div class="container">
     <PostCard :posts="sortNewPosts" />
-    <PostCard :posts="sortNewPosts" />
-    <PostCard :posts="sortNewPosts" />
   </div>
 </template>
 
@@ -26,8 +24,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-}
 @media screen and (max-width: 1024px) {
   .container {
     margin-left: 10px;
