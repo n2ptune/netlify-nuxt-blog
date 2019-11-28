@@ -24,25 +24,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .container {
     margin-left: 10px;
     margin-right: 10px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 769px) {
+  .container {
+    width: 70%;
   }
 }
 @media screen and (min-width: 1025px) {
   .container {
-    width: 72%;
+    width: 60%;
   }
 }
 @media screen and (min-width: 1425px) {
   .container {
-    width: 55%;
+    width: 40%;
   }
 }
 @media screen and (min-width: 1700px) {
   .container {
-    width: 40%;
+    width: 25%;
   }
 }
 </style>

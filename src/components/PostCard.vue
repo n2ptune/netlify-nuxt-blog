@@ -20,17 +20,12 @@
           <nuxt-link :to="`/posts/${post.slug}`">
             <p class="is-size-5">{{ post.title }}</p>
           </nuxt-link>
-          <p class="is-size-6 has-text-grey has-text-weight-light">
-            <b-icon
-              icon="file-replace-outline"
-              size="is-small"
-              :style="{ marginRight: '3px' }"
-            />{{ dateToDay(post.date) }}
+          <p class="is-size-6 has-text-grey has-text-weight-light date">
+            {{ dateToDay(post.date) }}
           </p>
         </div>
         <div class="card-header-icon">
           <nuxt-link :to="`/posts/${post.slug}`" target="_blank">
-            새 창에서 열기
             <b-icon icon="share"></b-icon>
           </nuxt-link>
         </div>
@@ -41,7 +36,12 @@
           class="tags-wrapper mb-1"
           :style="{ justifyContent: 'center', alignItems: 'center' }"
         >
-          <b-icon icon="tag" size="is-small" :style="{ color: '#00498c' }" alt="태그" />
+          <b-icon
+            icon="tag"
+            size="is-small"
+            :style="{ color: '#00498c' }"
+            alt="태그"
+          />
           <nuxt-link
             v-for="tag in post.tags"
             :key="tag"
@@ -59,6 +59,8 @@
 </template>
 
 <script>
+import dayjs from '@/plugins/day'
+
 export default {
   props: {
     posts: {
@@ -76,8 +78,7 @@ export default {
       return isExist || `https://source.unsplash.com/1280x960`
     },
     dateToDay(date) {
-      const day = this.$dayjs(new Date(date)).format('YYYY년 MM월 DD일 H시 m분')
-      return day
+      return dayjs().to(dayjs(date))
     }
   }
 }
@@ -121,5 +122,8 @@ export default {
   &:hover {
     background-color: rgba(0, 0, 0, 0.25);
   }
+}
+.date {
+  margin-left: 0.5rem;
 }
 </style>

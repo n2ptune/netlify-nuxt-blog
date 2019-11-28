@@ -96,7 +96,7 @@ export default {
   background-color: white;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
 
-  & .navbar-item {  
+  & .navbar-item {
     color: black;
     transition: background, 0.35s;
 
