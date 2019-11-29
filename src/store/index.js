@@ -1,5 +1,6 @@
 export const state = () => ({
-  blogPosts: []
+  blogPosts: [],
+  currentPost: null
 })
 
 export const getters = {
@@ -9,12 +10,19 @@ export const getters = {
       const [aT, bT] = [a.date, b.date]
       return aT < bT ? 1 : -1
     })
+  },
+  getCurrentPost(state) {
+    return state.currentPost
   }
 }
 
 export const mutations = {
   setBlogPosts(state, list) {
     state.blogPosts = list
+  },
+  setCurrentPost(state, post) {
+    if (state.currentPost !== null) state.currentPost = null
+    state.currentPost = post
   }
 }
 

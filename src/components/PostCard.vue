@@ -7,7 +7,11 @@
       <div class="card-image">
         <figure class="image is-2by1">
           <nuxt-link :to="`/posts/${post.slug}`" class="img-route">
-            <img :src="checkThumbnail(post.thumbnail)" :alt="post.title" />
+            <img
+              :src="checkThumbnail(post.thumbnail)"
+              :alt="post.title"
+              loading="eager"
+            />
             <div class="thumbnail-background"></div>
           </nuxt-link>
         </figure>
@@ -20,9 +24,16 @@
           <nuxt-link :to="`/posts/${post.slug}`">
             <p class="is-size-5">{{ post.title }}</p>
           </nuxt-link>
-          <p class="is-size-6 has-text-grey has-text-weight-light date">
-            {{ dateToDay(post.date) }}
-          </p>
+          <b-tooltip
+            :label="dateToDetailDay(post.date)"
+            type="is-info"
+            :delay="250"
+            animated
+          >
+            <p class="is-size-6 has-text-grey has-text-weight-light date">
+              {{ dateToDay(post.date) }}
+            </p>
+          </b-tooltip>
         </div>
         <div class="card-header-icon">
           <nuxt-link :to="`/posts/${post.slug}`" target="_blank">
@@ -79,6 +90,9 @@ export default {
     },
     dateToDay(date) {
       return dayjs().to(dayjs(date))
+    },
+    dateToDetailDay(date) {
+      return `${dayjs(date).format('YYYY년 MM월 DD일 HH시 mm분')} 작성`
     }
   }
 }
