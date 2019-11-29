@@ -1,17 +1,14 @@
 <template>
   <aside class="post-right-side" :style="{ right: rightHandler }">
     <ul>
-      <li class="is-size-6 has-text-weight-bold" :style="{ color: '#3200e6' }">
+      <li class="is-size-6 has-text-weight-bold content-title">
         목차
       </li>
-      <li>
-        Content 1
-        <ul class="sub-list">
-          <li>asdf</li>
-        </ul>
+      <li v-for="content in contents" :key="content">
+        <a :href="`#${content}`">
+          {{ content }}
+        </a>
       </li>
-      <li>Content 2</li>
-      <li>Content 3</li>
     </ul>
   </aside>
 </template>
@@ -24,13 +21,19 @@ export default {
       width: 0
     }
   },
+  props: ['contents'],
   mounted() {
+    // 리사이징
     this.reWidth()
     window.addEventListener('resize', this.reWidth)
     document.querySelector('.post-right-side').style.opacity = 1
+
+    // 스크롤
+    window.addEventListener('scroll', this.fixedPosition)
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.reWidth)
+    window.removeEventListener('scroll', this.fixedPosition)
   },
   methods: {
     reWidth() {
@@ -41,6 +44,18 @@ export default {
 
       this.left = _left.offsetLeft
       this.width = _width.clientWidth
+    },
+    fixedPosition() {
+      const mdWrapper = document.querySelector('.markdown-start')
+      const mdWrapperScrollY = mdWrapper.offsetTop
+      const currentY = window.scrollY
+      const sidebar = document.querySelector('.post-right-side')
+
+      if (currentY >= mdWrapperScrollY) {
+        sidebar.classList.add('scroll-fixed')
+      } else {
+        sidebar.classList.remove('scroll-fixed')
+      }
     }
   },
   computed: {

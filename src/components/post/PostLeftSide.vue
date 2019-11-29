@@ -1,5 +1,5 @@
 <template>
-  <aside class="post-left-side">
+  <aside class="post-left-side" :style="{ display: 'none' }">
     <p>Left Side</p>
   </aside>
 </template>

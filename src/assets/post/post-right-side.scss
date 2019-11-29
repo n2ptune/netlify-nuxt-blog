@@ -4,7 +4,21 @@
   position: absolute;
   transition: opacity 0.65s;
 }
+.content-title {
+  color: #3200e6;
+}
+.scroll-fixed {
+  position: fixed;
+  top: 25px;
+}
 ul,
 ul li {
   padding-left: 7px;
+}
+li > a {
+  color: gray;
+
+  &:hover {
+    color: #3200e6;
+  }
 }
