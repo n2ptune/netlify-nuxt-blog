@@ -28,7 +28,7 @@ export default {
   .container {
     margin-left: 10px;
     margin-right: 10px;
-    width: 100%;
+    width: auto;
   }
 }
 @media screen and (min-width: 769px) {

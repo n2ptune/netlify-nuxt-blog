@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     checkThumbnail(isExist) {
-      return isExist || `https://source.unsplash.com/1280x960`
+      return isExist || `https://source.unsplash.com/640x320`
     },
     dateToDay(date) {
       return dayjs().to(dayjs(date))
@@ -120,7 +120,7 @@ export default {
   transition: background, 0.35s;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.65);
   }
 }
 .date {

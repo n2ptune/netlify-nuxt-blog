@@ -10,14 +10,15 @@
 <script>
 export default {
   components: {
-    PostsHeader: () => import('@/components/PostsHeader'),
+    PostsHeader: () => import('@/components/PostsHeader')
   }
 }
 </script>
 
 <style lang="scss" scoped>
 main {
-  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
   margin-top: 7rem;
   background-color: rgb(241, 243, 245);
 

@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s | n2ptune web tech-dev',
+    titleTemplate: '%s | n2ptune Web Tech-Dev',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
