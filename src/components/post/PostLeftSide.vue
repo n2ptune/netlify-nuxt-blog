@@ -1,3 +1,9 @@
 <template>
-  <aside class="post-left-side"></aside>
+  <aside class="post-left-side">
+    <p>Left Side</p>
+  </aside>
 </template>
+
+<style lang="scss" scoped>
+@import '@/assets/post/post-left-side';
+</style>

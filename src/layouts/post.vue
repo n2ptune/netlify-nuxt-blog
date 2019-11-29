@@ -5,12 +5,8 @@
     <PostHeader />
     <!-- Main Wrapper -->
     <main id="root-main">
-      <!-- Side Component -->
-      <PostLeftSide />
-      <!-- Nuxt View posts/_blog, includes section, article, markdown element -->
+      <!-- Nuxt View posts/_blog, includes section, article, markdown element and Side Components -->
       <nuxt />
-      <!-- Side Component -->
-      <PostRightSide />
     </main>
   </div>
 </template>
@@ -19,8 +15,6 @@
 export default {
   components: {
     PostHeader: () => import('@/components/post/PostHeader'),
-    PostLeftSide: () => import('@/components/post/PostLeftSide'),
-    PostRightSide: () => import('@/components/post/PostRightSide')
   }
 }
 </script>

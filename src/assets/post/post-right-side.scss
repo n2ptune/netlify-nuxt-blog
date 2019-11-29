@@ -1,0 +1,10 @@
+.post-right-side {
+  display: inline-block;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.65s;
+}
+ul,
+ul li {
+  padding-left: 7px;
+}
