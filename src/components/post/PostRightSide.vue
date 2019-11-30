@@ -1,8 +1,8 @@
 <template>
   <aside class="post-right-side" :style="{ right: rightHandler }">
     <ul>
-      <li class="is-size-6 has-text-weight-bold content-title">
-        목차
+      <li class="is-size-5 has-text-weight-bold content-title">
+        Contents
       </li>
       <li v-for="content in contents" :key="content">
         <a :href="`#${content}`">

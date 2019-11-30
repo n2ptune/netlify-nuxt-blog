@@ -1,15 +1,15 @@
 .post-right-side {
-  display: inline-block;
+  display: flex;
   opacity: 0;
   position: absolute;
   transition: opacity 0.65s;
 }
 .content-title {
-  color: #3200e6;
+  color: #803efb;
 }
 .scroll-fixed {
   position: fixed;
-  top: 25px;
+  top: 85px;
 }
 ul,
 ul li {
@@ -19,6 +19,15 @@ li > a {
   color: gray;
 
   &:hover {
-    color: #3200e6;
+    color: #803efb;
+    // 새로 발견한 CSS 기법
+    // 목차 리스트의 아이템에 마우스를 올리면 텍스트의 굵기를 굵게 설정해주는 스타일
+    // font-weight 속성을 사용하면 텍스트의 굵기가 굵어진 만큼 컨테이너의 width가 늘어나는 것 같이
+    // 보이는 문제 발생
+    // 해결법은 text-shadow 속성을 이용해서 텍스트 뒤에 그림자를 만들어서
+    // 텍스트가 굵게 보이게 하는 스타일
+    // 이 방식은 컨테이너의 width가 늘어나는 것 처럼 보이는 문제를 방지할 수 있음
+    text-shadow: 0 0 0.01px #803efb, 0 0 0.01px #803efb, 0 0 0.01px #803efb;
+    // font-weight: bold;
   }
 }
