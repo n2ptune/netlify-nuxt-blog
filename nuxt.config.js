@@ -35,7 +35,8 @@ export default {
   css: [
     '@/assets/utils-margin.scss',
     '@/assets/utils.scss',
-    '@/assets/variables.scss'
+    '@/assets/variables.scss',
+    'highlight.js/styles/atom-one-dark.css'
   ],
   /*
    ** Plugins to load before mounting the App
@@ -60,7 +61,10 @@ export default {
   },
   srcDir: 'src/',
   markdownit: {
-    injected: true
+    injected: true,
+    use: [
+      'markdown-it-highlightjs'
+    ]
   },
   generate: {
     routes: function() {

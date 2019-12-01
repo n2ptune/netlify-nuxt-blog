@@ -14,6 +14,7 @@
     "@nuxtjs/axios": "^5.8.0",
     "@nuxtjs/markdownit": "^1.2.7",
     "dayjs": "^1.8.17",
+    "markdown-it-highlightjs": "^3.0.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.17"
   },
