@@ -3,7 +3,7 @@
     <p class="is-size-5 has-text-centered has-text-white mb-1">
       {{ posts.length }}개의 포스트
     </p>
-    <div class="card" v-for="post in posts" :key="post.slug">
+    <div class="card mb-2" v-for="post in posts" :key="post.slug">
       <div class="card-image">
         <figure class="image is-2by1">
           <nuxt-link :to="`/posts/${post.slug}`" class="img-route">
@@ -78,11 +78,6 @@ export default {
       type: Array,
       required: true
     }
-  },
-  mounted() {
-    document.querySelectorAll('.card').forEach(node => {
-      node.classList.add('mb-2')
-    })
   },
   methods: {
     checkThumbnail(isExist) {
