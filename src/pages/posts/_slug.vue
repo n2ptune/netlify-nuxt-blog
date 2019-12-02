@@ -10,7 +10,7 @@ import { mapMutations } from 'vuex'
 
 export default {
   async asyncData({ params, payload }) {
-    if (payload) return { blogPost: payload }
+    if (payload) return { slug: params.slug, blogPost: payload }
     else
       return {
         slug: params.slug,
