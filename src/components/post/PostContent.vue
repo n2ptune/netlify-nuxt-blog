@@ -7,6 +7,7 @@
       class="is-hidden-touch"
     />
     <div
+      v-if="loadedContents"
       class="markdown-content"
       v-html="!convertedHTML ? $md.render(markdown) : convertedHTML"
     ></div>
@@ -63,3 +64,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import '@/assets/post/markdown/_content';
+</style>

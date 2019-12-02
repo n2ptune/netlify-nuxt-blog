@@ -1,0 +1,31 @@
+.markdown-start {
+  & > table {
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    // 항목 공통
+    & th,
+    td {
+      padding: 10px 5px;
+    }
+    // 헤더만
+    & > thead {
+      border-bottom: 2.5px solid #aaa;
+
+      & > tr > th {
+        text-align: center;
+      }
+    }
+    // 바디만
+    & > tbody > tr {
+      border-bottom: 1px solid #ccc;
+
+      &:nth-child(2n) {
+        background-color: rgba(151, 127, 167, 0.144);
+      }
+      &:hover {
+        background-color: rgba(151, 127, 167, 0.144);
+      }
+    }
+  }
+}
