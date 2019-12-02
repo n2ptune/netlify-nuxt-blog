@@ -10,12 +10,12 @@
           <b-icon icon="menu" class="menu-icon" slot="trigger" role="button" />
 
           <b-dropdown-item aria-role="listitem" has-link>
-            <nuxt-link to="tags">
+            <nuxt-link to="tags" exact>
               태그별로 모아보기
             </nuxt-link>
           </b-dropdown-item>
           <b-dropdown-item aria-role="listitem" has-link>
-            <nuxt-link to="series">
+            <nuxt-link to="series" exact>
               시리즈별로 모아보기
             </nuxt-link>
           </b-dropdown-item>
