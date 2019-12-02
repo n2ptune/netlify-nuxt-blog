@@ -10,11 +10,11 @@ import { mapMutations } from 'vuex'
 
 export default {
   async asyncData({ params, payload }) {
-    // if (payload) return { blogPost: payload }
-    // else
-    return {
-      blogPost: await require(`@@/posts/${params.slug}.json`)
-    }
+    if (payload) return { blogPost: payload }
+    else
+      return {
+        blogPost: await require(`@@/posts/${params.slug}.json`)
+      }
   },
   layout: 'post',
   components: {
