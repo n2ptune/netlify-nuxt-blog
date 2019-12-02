@@ -6,7 +6,7 @@
       :contents="rightContents"
       class="is-hidden-touch"
     />
-    <div class="markdown-content" v-html="convertedHTML"></div>
+    <div class="markdown-content" v-html="$md.render(markdown)"></div>
   </article>
 </template>
 
