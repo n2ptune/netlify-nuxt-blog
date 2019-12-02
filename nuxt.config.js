@@ -12,6 +12,11 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
       }
     ],
     link: [
@@ -30,17 +35,14 @@ export default {
    */
   loading: {
     color: '#803efb',
-    failedColor:'#e71db5',
+    failedColor: '#e71db5',
     height: '3px',
     duration: 5000
   },
   /*
    ** Global CSS
    */
-  css: [
-    '@/assets/utils/_utils.scss',
-    '@/assets/variables.scss'
-  ],
+  css: ['@/assets/utils/_utils.scss', '@/assets/variables.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -65,9 +67,7 @@ export default {
   srcDir: 'src/',
   markdownit: {
     injected: true,
-    use: [
-      'markdown-it-highlightjs'
-    ]
+    use: ['markdown-it-highlightjs']
   },
   generate: {
     routes: function() {

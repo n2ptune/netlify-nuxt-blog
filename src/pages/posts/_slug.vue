@@ -13,6 +13,7 @@ export default {
     if (payload) return { blogPost: payload }
     else
       return {
+        slug: params.slug,
         blogPost: await require(`@@/posts/${params.slug}.json`)
       }
   },
@@ -46,6 +47,16 @@ export default {
           hid: 'og:description',
           property: 'og:description',
           content: this.blogPost.description
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://n2ptune.xyz/posts/${this.slug}/`
+        },
+        {
+          hid: 'fb:app_id',
+          property: 'fb:app_id',
+          content: '2538174759743749'
         }
       ]
     }
