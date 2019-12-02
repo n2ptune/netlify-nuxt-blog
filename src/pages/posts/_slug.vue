@@ -32,19 +32,19 @@ export default {
         },
         {
           hid: 'og:title',
-          name: 'og:title',
+          property: 'og:title',
           content: this.blogPost.title
         },
         {
           hid: 'og:image',
-          name: 'og:image',
+          property: 'og:image',
           content: this.blogPost.thumbnail
             ? `https://n2ptune.xyz${this.blogPost.thumbnail}`
             : ''
         },
         {
           hid: 'og:description',
-          name: 'og:description',
+          property: 'og:description',
           content: this.blogPost.description
         }
       ]
