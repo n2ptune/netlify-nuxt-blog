@@ -5,5 +5,5 @@
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/post/post-left-side';
+@import '@/assets/post/_left';
 </style>

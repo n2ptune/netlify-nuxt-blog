@@ -1,0 +1,26 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  // Must be deleted when made footer
+  margin-bottom: 5rem;
+  width: 95%;
+}
+// Desktop
+@media screen and (min-width: 1024px) and (max-width: 1215px) {
+  .page-container {
+    width: 50%;
+  }
+}
+// Widescreen
+@media screen and (min-width: 1216px) and (max-width: 1407px) {
+  .page-container {
+    width: 55%;
+  }
+}
+// FullHD
+@media screen and (min-width: 1408px) {
+  .page-container {
+    width: 40%;
+  }
+}

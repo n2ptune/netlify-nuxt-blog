@@ -29,6 +29,23 @@ export default {
           hid: 'description',
           name: 'description',
           content: this.blogPost.description
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.blogPost.title
+        },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: this.blogPost.thumbnail
+            ? `https://n2ptune.xyz${this.blogPost.thumbnail}`
+            : ''
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.blogPost.description
         }
       ]
     }
@@ -43,28 +60,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1.5rem;
-  width: 95%;
-}
-// Desktop
-@media screen and (min-width: 1024px) and (max-width: 1215px) {
-  .page-container {
-    width: 60%;
-  }
-}
-// Widescreen
-@media screen and (min-width: 1216px) and (max-width: 1407px) {
-  .page-container {
-    width: 50%;
-  }
-}
-// FullHD
-@media screen and (min-width: 1408px) {
-  .page-container {
-    width: 40%;
-  }
-}
+@import url('https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css');
+@import '@/assets/post/_main';
 </style>

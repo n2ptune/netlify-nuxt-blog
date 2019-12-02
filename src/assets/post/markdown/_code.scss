@@ -1,0 +1,29 @@
+.markdown-start {
+  // 코드 래퍼
+  & > pre {
+    position: relative;
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  // 래퍼 안 코드
+  & > pre > code {
+    font-family: 'Hack', monospace;
+    padding: 1rem;
+  }
+  // 인라인 코드
+  & p > code,
+  & li > code,
+  & a > code {
+    color: #803efb;
+    font-weight: bold;
+  }
+  & .code-lang-style {
+    font-family: 'Hack', monospace;
+    color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: inline-block;
+  }
+}

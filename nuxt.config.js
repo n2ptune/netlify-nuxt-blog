@@ -38,10 +38,8 @@ export default {
    ** Global CSS
    */
   css: [
-    '@/assets/utils-margin.scss',
-    '@/assets/utils.scss',
-    '@/assets/variables.scss',
-    'highlight.js/styles/atom-one-dark.css'
+    '@/assets/utils/_utils.scss',
+    '@/assets/variables.scss'
   ],
   /*
    ** Plugins to load before mounting the App

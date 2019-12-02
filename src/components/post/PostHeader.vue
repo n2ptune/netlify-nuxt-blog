@@ -5,7 +5,7 @@
   >
     <div class="header-container">
       <div class="header-left">
-        <div class="header-brand">
+        <div class="header-brand" @click="$router.push('/new')">
           N2DEV
         </div>
       </div>
@@ -58,5 +58,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/post/post-header';
+@import '@/assets/post/_header';
 </style>

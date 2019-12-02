@@ -3,6 +3,7 @@
   width: 100%;
   height: 58px;
   border-bottom: 1px solid #eee;
+  z-index: 9999;
 }
 .header {
   &-container {
@@ -25,6 +26,7 @@
   }
   &-brand {
     font-size: 1.4rem;
+    cursor: pointer;
 
     &::after {
       display: block;
@@ -32,6 +34,9 @@
       width: 100%;
       height: 3px;
       background: linear-gradient(to right, #01c9ca, #3886FF);
+    }
+    &:hover {
+      color: black;
     }
   }
   &-center {

@@ -32,6 +32,14 @@ export default {
       required: true
     }
   },
+  methods: {
+    converted(convertedElement) {
+      // 서버 사이드와 클라이언트 사이드 DOM 매칭(사이드 바)
+      this.loadedContents = true
+      // 데이터 바인딩
+      this.convertedHTML = convertedElement
+    }
+  },
   mounted() {
     // String 형태로 된 HTML 문서를 받아서 div 원소를 만들고
     // 내부에 변환된 HTML 문서를 실음
@@ -55,16 +63,34 @@ export default {
       }
     })
 
-    // 사이드 바 렌더링
-    // @SEE 목차들을 다 주워오지 않고 렌더링 해주면 매칭 오류 발생
-    this.loadedContents = true
+    // highlight.js에서 언어 구해오기
+    div.querySelectorAll('.hljs').forEach(elem => {
+      const className = elem.className
+      const regClassName = /language/.exec(className)
+      if (regClassName) {
+        // 언어 가져오기
+        const language = className
+          .slice(regClassName.index)
+          .split('-')[1]
+          .toUpperCase()
 
-    // 데이터에 바인딩
-    this.convertedHTML = div.outerHTML
+        // 삽입할 원소 만들기
+        const p = document.createElement('p')
+        p.innerText = language
+        p.className = `code-lang-style code-${language.toLowerCase()}`
+        
+        // 원소 삽입
+        elem.appendChild(p)
+      }
+    })
+
+    // 변환 끝
+    this.converted(div.outerHTML)
   }
 }
 </script>
 
 <style lang="scss">
 @import '@/assets/post/markdown/_content';
+@import 'highlight.js/styles/codepen-embed.css';
 </style>

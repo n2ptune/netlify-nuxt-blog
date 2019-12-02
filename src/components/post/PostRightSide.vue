@@ -40,7 +40,7 @@ export default {
       const _left = document.querySelector('.page-container')
       const _width = document.querySelector('.post-right-side')
 
-      if (1023 >= window.innerWidth) return
+      if (1216 >= window.innerWidth) return
 
       this.left = _left.offsetLeft
       this.width = _width.clientWidth
@@ -60,12 +60,12 @@ export default {
   },
   computed: {
     rightHandler() {
-      return `${this.left - this.width - 50}px`
+      return `${this.left - this.width - 10}px`
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/post/post-right-side';
+@import '@/assets/post/_right';
 </style>
