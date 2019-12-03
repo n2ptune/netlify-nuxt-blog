@@ -4,13 +4,24 @@
       Oops!
     </div>
     <div class="title">
-      페이지를 준비중입니다.
+      {{ reqParam }} 페이지를 준비중입니다.
     </div>
     <div class="is-size-3 font-weight-bold">
       Oops!
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    reqParam: {
+      type: String,
+      required: true
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 ._container {

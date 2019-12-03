@@ -1,9 +1,14 @@
 <template>
-  <Waiting />
+  <Waiting :req-param="tagName" />
 </template>
 
 <script>
 export default {
+  asyncData({ params }) {
+    return {
+      tagName: params.tag
+    }
+  },
   head() {
     return {
       title: 'Waiting!'

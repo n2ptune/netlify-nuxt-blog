@@ -72,13 +72,15 @@ export default {
   generate: {
     routes: function() {
       const fs = require('fs')
-      return fs.readdirSync('./posts/').map(file => {
+      const routeObj = fs.readdirSync('./posts/').map(file => {
         return {
           // .json 확장자 명을 지우고 파일 이름 전체 출력
           route: `/posts/${file.slice(0, -5)}`,
           payload: require(`./posts/${file}`)
         }
       })
+
+      return routeObj
     },
     fallback: true
   },
