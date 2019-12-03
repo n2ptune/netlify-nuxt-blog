@@ -27,6 +27,16 @@ export default {
         content: process.env.npm_package_description || ''
       },
       {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'n2ptune Web Tech-Dev'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: '웹 프론트엔드 영역 기술/개발 학습블로그'
+      },
+      {
         hid: 'og:type',
         property: 'og:type',
         content: 'website'
