@@ -11,10 +11,15 @@
       class="markdown-content"
       v-html="!convertedHTML ? $md.render(markdown) : convertedHTML"
     ></div>
+    <div class="content-loading" v-if="!loadedContents">
+      <vcl-code v-for="i in 6" :key="i" />
+    </div>
   </article>
 </template>
 
 <script>
+import { VclCode } from 'vue-content-loading'
+
 export default {
   data() {
     return {
@@ -25,7 +30,8 @@ export default {
   },
   components: {
     PostLeftSide: () => import('@/components/post/PostLeftSide'),
-    PostRightSide: () => import('@/components/post/PostRightSide')
+    PostRightSide: () => import('@/components/post/PostRightSide'),
+    VclCode
   },
   props: {
     markdown: {
