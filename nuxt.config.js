@@ -1,3 +1,16 @@
+const generateRoutes = () => {
+  const fs = require('fs')
+  const routeObj = fs.readdirSync('./posts/').map(file => {
+    return {
+      // .json 확장자 명을 지우고 파일 이름 전체 출력
+      route: `/posts/${file.slice(0, -5)}`,
+      payload: require(`./posts/${file}`)
+    }
+  })
+
+  return routeObj
+}
+
 export default {
   mode: 'universal',
   /*
@@ -54,7 +67,12 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', '@nuxtjs/markdownit', 'nuxt-buefy'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/markdownit',
+    'nuxt-buefy',
+    '@nuxtjs/sitemap'
+  ],
   /*
    ** Build configuration
    */
@@ -70,23 +88,18 @@ export default {
     use: ['markdown-it-highlightjs']
   },
   generate: {
-    routes: function() {
-      const fs = require('fs')
-      const routeObj = fs.readdirSync('./posts/').map(file => {
-        return {
-          // .json 확장자 명을 지우고 파일 이름 전체 출력
-          route: `/posts/${file.slice(0, -5)}`,
-          payload: require(`./posts/${file}`)
-        }
-      })
-
-      return routeObj
-    },
+    routes: generateRoutes,
     fallback: true
   },
   buefy: {
     /* buefy options */
     materialDesignIcons: false,
     css: false
+  },
+  sitemap: {
+    hostname: 'https://n2ptune.xyz',
+    gzip: true,
+    exclude: ['/admin/**'],
+    routes: generateRoutes
   }
 }
