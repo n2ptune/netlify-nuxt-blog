@@ -24,7 +24,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: '웹 프론트엔드 영역 기술/개발 학습블로그'
       },
       {
         hid: 'og:title',
