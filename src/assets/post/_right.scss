@@ -31,3 +31,9 @@ li > a {
     // font-weight: bold;
   }
 }
+.active-content {
+  color: #803efb;
+  text-shadow: 0 0 0.01px #803efb, 0 0 0.01px #803efb, 0 0 0.01px #803efb;
+  border-bottom: 1px dashed #803efb;
+  padding-bottom: 3px;
+}

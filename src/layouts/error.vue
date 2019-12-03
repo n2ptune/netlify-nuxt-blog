@@ -19,6 +19,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'Error'
+    }
+  },
   props: ['error'],
   layout: 'empty'
 }

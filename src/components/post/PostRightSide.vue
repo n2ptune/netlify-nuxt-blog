@@ -21,7 +21,12 @@ export default {
       width: 0
     }
   },
-  props: ['contents'],
+  props: {
+    contents: {
+      type: Array,
+      required: true
+    }
+  },
   mounted() {
     // 리사이징
     this.reWidth()
@@ -30,10 +35,12 @@ export default {
 
     // 스크롤
     window.addEventListener('scroll', this.fixedPosition)
+    window.addEventListener('scroll', this.scrollSpy)
   },
   beforeDestroy() {
     window.removeEventListener('resize', this.reWidth)
     window.removeEventListener('scroll', this.fixedPosition)
+    window.removeEventListener('scroll', this.scrollSpy)
   },
   methods: {
     reWidth() {
@@ -56,6 +63,25 @@ export default {
       } else {
         sidebar.classList.remove('scroll-fixed')
       }
+    },
+    scrollSpy() {
+      const currentY = window.scrollY
+
+      this.contents.forEach((elem, index) => {
+        const currentElemTop = document.getElementById(elem).offsetTop
+        const nextElemTop =
+          this.contents[index + 1] === undefined
+            ? document.querySelector('.page-container').offsetHeight
+            : document.getElementById(this.contents[index + 1]).offsetTop
+
+        if (currentElemTop <= currentY && currentY <= nextElemTop) {
+          document
+            .querySelectorAll('.active-content')
+            .forEach(elem => elem.classList.remove('active-content'))
+          
+          document.querySelector(`a[href="#${elem}"]`).classList.add('active-content')
+        }
+      })
     }
   },
   computed: {
