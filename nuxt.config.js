@@ -69,7 +69,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/day'],
+  plugins: ['@/plugins/day', { src: '@/plugins/ga', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
