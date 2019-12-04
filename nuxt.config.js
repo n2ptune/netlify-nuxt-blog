@@ -18,6 +18,9 @@ export default {
    */
   head: {
     titleTemplate: '%s | n2ptune Web Tech-Dev',
+    script: [
+      { 'data-ad-client': 'ca-pub-3441377677018772', async: true, src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' }
+    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -90,7 +93,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) { }
   },
   srcDir: 'src/',
   markdownit: {
