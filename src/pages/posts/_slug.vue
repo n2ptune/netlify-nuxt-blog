@@ -1,5 +1,6 @@
 <template>
   <section class="page-container mx-auto">
+    <adsbygoogle />
     <PostTitle />
     <PostContent :markdown="blogPost.body" />
   </section>
