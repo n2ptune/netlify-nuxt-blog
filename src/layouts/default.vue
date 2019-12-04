@@ -1,24 +1,20 @@
 <template>
-  <div id="layout-wrapper-default">
-    <Header />
+  <div id="wrapper">
+    <Header class="is-hidden-desktop" />
+    <Sidebar class="is-hidden-touch" />
     <nuxt />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header'
-
 export default {
   components: {
-    Header
+    Header: () => import('@/components/main/Header'),
+    Sidebar: () => import('@/components/main/Sidebar')
   }
 }
 </script>
 
-<style lang="scss" scoped>
-#layout-wrapper-default {
-  background: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
-  background-attachment: fixed !important;
-  height: 100%;
-}
+<style lang="scss">
+@import '@/assets/main/_layout';
 </style>

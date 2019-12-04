@@ -1,0 +1,40 @@
+.main-wrapper {
+  max-width: 100%;
+  margin-left: 250px;
+  min-height: 100%;
+  background-color: #ebebeb;
+  padding: 1rem;
+}
+.post-list-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  & > .post-header {
+    display: block;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 1.7rem;
+  }
+
+  & > .post-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    & > .card {
+      width: 480px;
+    }
+  }
+}
+// 반응형
+@media screen and (max-width: 768px) {
+  .main-wrapper {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .main-wrapper {
+    margin-left: 0;
+  }
+}

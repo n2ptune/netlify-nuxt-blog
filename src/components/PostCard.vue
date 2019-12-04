@@ -1,52 +1,47 @@
 <template>
-  <div class="card-wrapper">
-    <p class="is-size-5 has-text-centered has-text-white mb-1">
-      {{ posts.length }}개의 포스트
-    </p>
-    <div class="card mb-2" v-for="post in posts" :key="post.slug">
-      <div class="card-image">
-        <figure class="image is-2by1">
-          <nuxt-link :to="`/posts/${post.slug}`" class="img-route">
-            <img
-              :src="checkThumbnail(post.thumbnail)"
-              :alt="post.title"
-              loading="eager"
-            />
-            <div class="thumbnail-background"></div>
-          </nuxt-link>
-        </figure>
-      </div>
-      <div class="card-header">
-        <div
-          class="card-header-title"
-          :style="{ alignItems: 'start', flexDirection: 'column' }"
+  <div class="card mb-2">
+    <div class="card-image">
+      <figure class="image is-2by1">
+        <nuxt-link :to="`/posts/${post.slug}`" class="img-route">
+          <img
+            :src="checkThumbnail(post.thumbnail)"
+            :alt="post.title"
+            loading="eager"
+          />
+          <div class="thumbnail-background"></div>
+        </nuxt-link>
+      </figure>
+    </div>
+    <div class="card-header">
+      <div
+        class="card-header-title"
+        :style="{ alignItems: 'start', flexDirection: 'column' }"
+      >
+        <nuxt-link :to="`/posts/${post.slug}`">
+          <p class="is-size-5">{{ post.title }}</p>
+        </nuxt-link>
+        <b-tooltip
+          :label="dateToDetailDay(post.date)"
+          type="is-info"
+          :delay="250"
+          animated
         >
-          <nuxt-link :to="`/posts/${post.slug}`">
-            <p class="is-size-5">{{ post.title }}</p>
-          </nuxt-link>
-          <b-tooltip
-            :label="dateToDetailDay(post.date)"
-            type="is-info"
-            :delay="250"
-            animated
-          >
-            <p class="is-size-6 has-text-grey has-text-weight-light date">
-              {{ dateToDay(post.date) }}
-            </p>
-          </b-tooltip>
-        </div>
-        <div class="card-header-icon">
-          <nuxt-link :to="`/posts/${post.slug}`" target="_blank">
-            <b-icon icon="share"></b-icon>
-          </nuxt-link>
-        </div>
+          <p class="is-size-6 has-text-grey has-text-weight-light date">
+            {{ dateToDay(post.date) }}
+          </p>
+        </b-tooltip>
       </div>
-      <div class="card-content">
-        <PostTag :tags="post.tags" />
-        <p class="is-size-6">
-          {{ post.description }}
-        </p>
+      <div class="card-header-icon">
+        <nuxt-link :to="`/posts/${post.slug}`" target="_blank">
+          <b-icon icon="share"></b-icon>
+        </nuxt-link>
       </div>
+    </div>
+    <div class="card-content">
+      <PostTag :tags="post.tags" />
+      <p class="is-size-6">
+        {{ post.description }}
+      </p>
     </div>
   </div>
 </template>
@@ -59,8 +54,8 @@ export default {
     PostTag: () => import('@/components/PostTag')
   },
   props: {
-    posts: {
-      type: Array,
+    post: {
+      type: Object,
       required: true
     }
   },

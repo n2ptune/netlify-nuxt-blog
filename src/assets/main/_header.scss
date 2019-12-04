@@ -1,0 +1,23 @@
+$pd-container: 10px;
+
+.main-header {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 19;
+  align-items: center;
+  width: 100%;
+  height: 58px;
+  border-bottom: 1px solid #eeeeee;
+  background-color: white;
+}
+.header-content-container {
+  padding-left: $pd-container;
+  padding-right: $pd-container;
+}
+.header-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #121230;
+}
