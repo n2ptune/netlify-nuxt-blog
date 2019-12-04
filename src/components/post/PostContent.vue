@@ -98,5 +98,5 @@ export default {
 
 <style lang="scss">
 @import '@/assets/post/markdown/_content';
-@import 'highlight.js/styles/codepen-embed.css';
+@import 'highlight.js/styles/monokai-sublime.css';
 </style>

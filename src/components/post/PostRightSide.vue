@@ -5,7 +5,7 @@
         Contents
       </li>
       <li v-for="content in contents" :key="content">
-        <a :href="`#${content}`">
+        <a :href="`#${content}`" @click="anchorClick">
           {{ content }}
         </a>
       </li>
@@ -74,7 +74,7 @@ export default {
             ? document.querySelector('.page-container').offsetHeight
             : document.getElementById(this.contents[index + 1]).offsetTop
 
-        if (currentElemTop <= currentY && currentY <= nextElemTop) {
+        if (currentElemTop - 58 <= currentY && currentY <= nextElemTop) {
           document
             .querySelectorAll('.active-content')
             .forEach(elem => elem.classList.remove('active-content'))
@@ -82,6 +82,18 @@ export default {
           document.querySelector(`a[href="#${elem}"]`).classList.add('active-content')
         }
       })
+    },
+    anchorClick(event) {
+      // URL에 앵커 삭제
+      event.preventDefault()
+
+      // 타겟 값 구하기
+      const targetID = event.target.attributes.href.value.slice(1)
+      const targetElem = document.getElementById(targetID)
+      const targetElemTop = targetElem.offsetTop
+
+      // 스크롤 이동
+      window.scrollTo(0, targetElemTop - 58)
     }
   },
   computed: {
