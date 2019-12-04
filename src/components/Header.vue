@@ -8,7 +8,6 @@
     <div class="container">
       <div class="navbar-brand">
         <nuxt-link to="/" class="navbar-item" exact>
-          <b-icon icon="pine-tree" />
           n2ptune-dev
         </nuxt-link>
 
