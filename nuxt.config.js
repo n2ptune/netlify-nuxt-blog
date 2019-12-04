@@ -50,6 +50,18 @@ export default {
         type: 'text/css',
         href:
           'https://cdn.materialdesignicons.com/4.5.95/css/materialdesignicons.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href:
+          'https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href:
+          'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap'
       }
     ]
   },
@@ -91,7 +103,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) { }
+    extend(config, ctx) {}
   },
   srcDir: 'src/',
   markdownit: {
