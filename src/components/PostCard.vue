@@ -99,7 +99,7 @@ export default {
   transition: background, 0.35s;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(255, 255, 255, 0.52);
   }
 }
 .date {

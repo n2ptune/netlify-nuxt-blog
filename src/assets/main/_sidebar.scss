@@ -20,14 +20,47 @@ $avatar-size: 40px;
 .sidebar-header-profile {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
-.profile-img > img {
-  height: $avatar-size;
-  border-radius: 50%;
-}
-.profile-name {
-  padding-bottom: 10px;
-  margin-left: $margin-profile-name;
+.profile {
+  &-img-name-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &-img {
+    & > img {
+      height: $avatar-size;
+      border-radius: 50%;
+    }
+  }
+  &-name {
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-left: $margin-profile-name;
+  }
+  &-link {
+    display: flex;
+    position: fixed;
+    bottom: 25px;
+    flex-direction: row;
+    margin-top: $margin-contents;
+
+    & > div {
+      margin-left: $margin-contents;
+      margin-right: $margin-contents;
+    }
+
+    & > .github > a {
+      color: black;
+      cursor: pointer;
+    }
+
+    & > .facebook > a {
+      color: #3b5998;
+      cursor: pointer;
+    }
+  }
 }
 // Contents in Sidebar
 .sidebar-contents > div {
