@@ -11,6 +11,36 @@ const generateRoutes = () => {
   return routeObj
 }
 
+const generateTagRoutes = () => {
+  const fs = require('fs')
+  const tags = []
+  fs.readdirSync('./posts/').map(file => {
+    // 파일을 읽고 태그만 반환
+    const readFile = fs.readFileSync(`./posts/${file}`)
+    const { tags: fileTags } = JSON.parse(readFile)
+    fileTags.forEach(elem => {
+      tags.push(`/tags/${elem}`)
+    })
+  })
+  // 중복 제거
+  // @SEE https://medium.com/@Dongmin_Jang/javascript-array-%EC%A4%91%EB%B3%B5-%EC%A0%9C%EA%B1%B0%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-es6-b5b9075361f9
+  const fillterTags = Array.from(new Set(tags))
+
+  return fillterTags
+}
+
+const integratedRoutes = () => {
+  const result = []
+
+  const tagsRoutes = generateTagRoutes()
+  const postsRoutes = generateRoutes()
+
+  for(const item of tagsRoutes) result.push(item)
+  for(const item of postsRoutes) result.push(item)
+
+  return result
+}
+
 export default {
   mode: 'universal',
   /*
@@ -111,7 +141,7 @@ export default {
     use: ['markdown-it-highlightjs']
   },
   generate: {
-    routes: generateRoutes,
+    routes: integratedRoutes,
     fallback: true
   },
   buefy: {
@@ -123,7 +153,7 @@ export default {
     hostname: 'https://n2ptune.xyz',
     gzip: true,
     exclude: ['/admin/**'],
-    routes: generateRoutes
+    routes: integratedRoutes
   },
   'google-adsense': {
     id: 'ca-pub-3441377677018772',
