@@ -84,7 +84,7 @@ export default {
         const p = document.createElement('p')
         p.innerText = language
         p.className = `code-lang-style code-${language.toLowerCase()}`
-        
+
         // 원소 삽입
         elem.appendChild(p)
       }

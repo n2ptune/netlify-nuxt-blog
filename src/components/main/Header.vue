@@ -24,7 +24,7 @@ export default {
     drawer() {
       const sidebar = document.querySelector('.sidebar')
       // 열려있으면
-      if(this.handleDrawer) {
+      if (this.handleDrawer) {
         sidebar.classList.remove('mobile-show')
         sidebar.classList.add('mobile-show-leave')
       } else {

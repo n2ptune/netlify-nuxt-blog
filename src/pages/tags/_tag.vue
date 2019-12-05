@@ -17,7 +17,7 @@ export default {
           hid: 'og:url',
           property: 'og:url',
           content: `https://n2ptune.xyz/tags/${this.tagName}`
-        },
+        }
       ]
     }
   },

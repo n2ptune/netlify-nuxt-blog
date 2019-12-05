@@ -78,7 +78,8 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://avatars3.githubusercontent.com/u/44240708?v=4'
+        content:
+          'https://firebasestorage.googleapis.com/v0/b/n2ptune-github-io.appspot.com/o/images%2F44240708.png?alt=media&token=849d8e9b-ed2e-4da6-8e9e-9379f8d2707f'
       },
       {
         hid: 'og:image:width',
