@@ -29,11 +29,17 @@ export const mutations = {
 export const actions = {
   async nuxtServerInit({ commit }) {
     let files = await require.context('@@/posts', false, /\.json$/)
+    let tags = []
     let blogPosts = files.keys().map(key => {
       let res = files(key)
+      let currentTags = res.tags
+      currentTags.forEach(tag => {
+        tags.push(tag)
+      })
       res.slug = key.slice(2, -5)
       return res
     })
     await commit('setBlogPosts', blogPosts)
+    await commit('tag/setTags', tags)
   }
 }

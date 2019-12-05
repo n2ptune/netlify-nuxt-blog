@@ -19,30 +19,51 @@
               <b-icon icon="github-circle" size="is-medium" />
             </a>
           </div>
-          <div class="facebook">
-            <a href="https://facebook.com/linediffuser" target="_blank">
-              <b-icon icon="facebook" size="is-medium" />
-            </a>
-          </div>
         </div>
       </div>
     </div>
     <div class="sidebar-contents mt-1">
       <div class="content-tag">
-        태그
+        <div class="content-header">
+          태그
+        </div>
+        <ul class="tag-wrapper">
+          <li class="tag-list" v-for="tag in tags" :key="tag.name">
+            <span class="tag-name">
+              <nuxt-link :to="{ path: `/tags/${tag.name}` }">{{
+                firstUpperCase(tag.name)
+              }}</nuxt-link>
+            </span>
+            <span class="tag-count">{{ tag.count }}</span>
+          </li>
+        </ul>
       </div>
       <div class="content-series">
-        시리즈
+        <div class="content-header">
+          시리즈
+        </div>
       </div>
     </div>
   </aside>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   data() {
     return {
       avatar: null
+    }
+  },
+  computed: {
+    ...mapGetters({
+      tags: 'tag/getTags'
+    })
+  },
+  methods: {
+    firstUpperCase(str) {
+      return `${str.charAt(0).toUpperCase()}${str.substring(1, str.length)}`
     }
   },
   async mounted() {

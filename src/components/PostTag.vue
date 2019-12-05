@@ -1,6 +1,5 @@
 <template>
   <div v-if="tags" class="tags-wrapper">
-    <b-icon icon="tag" size="is-small" :style="{ color: '#00498c' }" />
     <div class="tags-list">
       <nuxt-link
         v-for="tag in tags"
@@ -50,14 +49,14 @@ export default {
 }
 .p-tag {
   color: rgba(0, 0, 0, 0.45);
-  padding: 0.25rem 0.25rem;
+  padding: 0.25rem 0.5rem;
   margin: 0 0.25rem;
-  background-color: #e6f4fd;
+  background-color: #fafdff;
   border-radius: 3px;
   transition: background 0.45s ease-out, color 0.45s ease-out;
 
   &:hover {
-    background-color: #c6e9ff;
+    background-color: #c5c4ff;
     color: rgba(0, 0, 0, 0.85);
     font-weight: bold;
   }

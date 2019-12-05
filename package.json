@@ -4,6 +4,11 @@
   "description": "웹 프론트엔드 영역 기술/개발 학습블로그",
   "author": "n2ptune",
   "private": true,
+  "config": {
+    "nuxt": {
+      "port": "3001"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

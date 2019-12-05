@@ -55,15 +55,51 @@ $avatar-size: 40px;
       color: black;
       cursor: pointer;
     }
-
-    & > .facebook > a {
-      color: #3b5998;
-      cursor: pointer;
-    }
   }
 }
+
 // Contents in Sidebar
 .sidebar-contents > div {
   margin-top: $margin-contents;
   margin-bottom: $margin-contents;
+}
+
+.content {
+  &-tag > &-header,
+  &-series > &-header {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.content-tag {
+  & > .tag-wrapper {
+    padding-left: 0.5rem;
+
+    & > .tag-list {
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+
+      & > .tag-name > a {
+        color: inherit;
+        font-weight: bold;
+        padding-bottom: 2.5px;
+
+        &:hover {
+          color: black;
+          border-bottom: 1px dashed black;
+        }
+      }
+
+      & > .tag-count {
+        color: white;
+        margin-left: 3px;
+        padding: 1px 7px;
+        background-color: orange;
+        border-radius: 100%;
+        font-size: 0.875rem;
+      }
+    }
+  }
 }
