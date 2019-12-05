@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://n2ptune.xyz/sitemap.xml.gz
