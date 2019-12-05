@@ -5,7 +5,7 @@
   >
     <div class="header-container">
       <div class="header-left">
-        <div class="header-brand" @click="$router.push('/new')">
+        <div class="header-brand" @click="$router.push('/')">
           N2DEV
         </div>
       </div>
