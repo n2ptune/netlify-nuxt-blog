@@ -18,7 +18,18 @@ export default {
   head() {
     return {
       title: 'Home',
-      meta: [{ hid: 'og:title', property: 'og:title', content: 'Home' }]
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Home | n2ptune Web Tech-Dev'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: ''
+        }
+      ]
     }
   },
   computed: {

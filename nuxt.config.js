@@ -35,8 +35,8 @@ const integratedRoutes = () => {
   const tagsRoutes = generateTagRoutes()
   const postsRoutes = generateRoutes()
 
-  for(const item of tagsRoutes) result.push(item)
-  for(const item of postsRoutes) result.push(item)
+  for (const item of tagsRoutes) result.push(item)
+  for (const item of postsRoutes) result.push(item)
 
   return result
 }
@@ -70,6 +70,25 @@ export default {
         hid: 'og:type',
         property: 'og:type',
         content: 'website'
+      },
+      {
+        property: 'fb:app_id',
+        content: '2538174759743749'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://avatars3.githubusercontent.com/u/44240708?v=4'
+      },
+      {
+        hid: 'og:image:width',
+        property: 'og:image:width',
+        content: '700'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://n2ptune.xyz/'
       }
     ],
     link: [

@@ -35,14 +35,14 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: this.blogPost.title
+          content: `${this.blogPost.title} | n2ptune Web Tech-Dev`
         },
         {
           hid: 'og:image',
           property: 'og:image',
           content: this.blogPost.thumbnail
             ? `https://n2ptune.xyz${this.blogPost.thumbnail}`
-            : ''
+            : 'https://avatars3.githubusercontent.com/u/44240708?v=4'
         },
         {
           hid: 'og:description',
@@ -53,11 +53,6 @@ export default {
           hid: 'og:url',
           property: 'og:url',
           content: `https://n2ptune.xyz/posts/${this.slug}/`
-        },
-        {
-          hid: 'fb:app_id',
-          property: 'fb:app_id',
-          content: '2538174759743749'
         }
       ]
     }

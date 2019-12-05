@@ -11,7 +11,14 @@ export default {
   },
   head() {
     return {
-      title: 'Waiting!'
+      title: 'Waiting!',
+      meta: [
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://n2ptune.xyz/tags/${this.tagName}`
+        },
+      ]
     }
   },
   layout: 'empty',
