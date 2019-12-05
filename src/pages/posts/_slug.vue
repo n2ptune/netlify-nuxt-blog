@@ -1,7 +1,7 @@
 <template>
   <section class="page-container mx-auto">
     <!-- <adsbygoogle /> -->
-    <PostTitle />
+    <PostTitle v-if="$store.state.currentPost" />
     <PostContent :markdown="blogPost.body" />
   </section>
 </template>

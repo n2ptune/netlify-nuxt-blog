@@ -15,7 +15,7 @@
         </div>
         <div class="profile-link">
           <div class="github">
-            <a href="https://github.com/n2ptune" target="_blank">
+            <a href="https://github.com/n2ptune/netlify-nuxt-blog" target="_blank">
               <b-icon icon="github-circle" size="is-medium" />
             </a>
           </div>

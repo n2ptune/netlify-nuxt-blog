@@ -2,7 +2,7 @@ $pd-container: 10px;
 
 .main-header {
   display: flex;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 19;
@@ -11,13 +11,27 @@ $pd-container: 10px;
   height: 58px;
   border-bottom: 1px solid #eeeeee;
   background-color: white;
+  box-shadow: 3px 0 15px 5px rgba(0, 0, 0, 0.12);
 }
 .header-content-container {
   padding-left: $pd-container;
   padding-right: $pd-container;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
 }
 .header-title {
   font-size: 1.25rem;
-  font-weight: bold;
   color: #121230;
+}
+.drawer-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
 }
