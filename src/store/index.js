@@ -13,6 +13,11 @@ export const getters = {
   },
   getCurrentPost(state) {
     return state.currentPost
+  },
+  getTaggedPosts: (state) => (tag) => {
+    return state.blogPosts.filter((post) => {
+      return post.tags.includes(tag)
+    })
   }
 }
 
