@@ -18,6 +18,13 @@ export default {
   head() {
     return {
       title: 'Home',
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: 'https://n2ptune.xyz/'
+        }
+      ],
       meta: [
         {
           hid: 'og:title',
@@ -27,8 +34,8 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: ''
-        }
+          content: '웹 프론트엔드 영역 기술/개발 블로그'
+        },
       ]
     }
   },

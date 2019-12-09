@@ -28,11 +28,18 @@ export default {
   head() {
     return {
       title: this.tagName,
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `https://n2ptune.xyz/tags/${this.tagName}/`
+        }
+      ],
       meta: [
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://n2ptune.xyz/tags/${this.tagName}`
+          content: `https://n2ptune.xyz/tags/${this.tagName}/`
         }
       ]
     }

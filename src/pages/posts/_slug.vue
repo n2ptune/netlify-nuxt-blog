@@ -26,6 +26,13 @@ export default {
   head() {
     return {
       title: this.blogPost.title,
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `https://n2ptune.xyz/posts/${this.slug}/`
+        }
+      ],
       meta: [
         {
           hid: 'description',
