@@ -3,7 +3,7 @@ const generateRoutes = () => {
   const routeObj = fs.readdirSync('./posts/').map(file => {
     return {
       // .json 확장자 명을 지우고 파일 이름 전체 출력
-      route: `/posts/${file.slice(0, -5)}`,
+      route: `/posts/${file.slice(0, -5)}/`,
       payload: require(`./posts/${file}`)
     }
   })
@@ -19,7 +19,7 @@ const generateTagRoutes = () => {
     const readFile = fs.readFileSync(`./posts/${file}`)
     const { tags: fileTags } = JSON.parse(readFile)
     fileTags.forEach(elem => {
-      tags.push(`/tags/${elem}`)
+      tags.push(`/tags/${elem}/`)
     })
   })
   // 중복 제거
