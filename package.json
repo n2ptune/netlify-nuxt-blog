@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "웹 프론트엔드 영역 기술/개발 학습블로그",
   "author": "n2ptune",
-  "private": true,
+  "private": false,
   "config": {
     "nuxt": {
       "port": "3000"

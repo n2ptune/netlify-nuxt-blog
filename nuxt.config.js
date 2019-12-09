@@ -1,5 +1,5 @@
 const generateRoutes = () => {
-  const fs = require('fs')
+  const fs = require('fs')ㄴ
   const routeObj = fs.readdirSync('./posts/').map(file => {
     return {
       // .json 확장자 명을 지우고 파일 이름 전체 출력
@@ -54,6 +54,28 @@ export default {
       {
         hid: 'description',
         name: 'description',
+        content: '웹 프론트엔드 영역 기술/개발 학습블로그'
+      },
+      {
+        hid: 'robots',
+        name: 'robots',
+        content: 'All'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'web, front-end, HTML5, CSS3, 웹, javascript, react, vue, nuxt, firebase, node.js'
+      },
+      {
+        'http-equiv': 'Content-Type',
+        content: 'text/html; charset=utf-8'
+      },
+      {
+        'http-equiv': 'X-UA-Compatible',
+        content: 'IE=edge'
+      },
+      {
+        'http-equiv': 'Subject',
         content: '웹 프론트엔드 영역 기술/개발 학습블로그'
       },
       {

@@ -27,7 +27,7 @@ export default {
   },
   head() {
     return {
-      title: this.tagName,
+      title: `#${this.tagName}`,
       link: [
         {
           hid: 'canonical',
@@ -40,6 +40,11 @@ export default {
           hid: 'og:url',
           property: 'og:url',
           content: `https://n2ptune.xyz/tags/${this.tagName}/`
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: this.tagName
         }
       ]
     }

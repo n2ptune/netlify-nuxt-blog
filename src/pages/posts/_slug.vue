@@ -40,6 +40,11 @@ export default {
           content: this.blogPost.description
         },
         {
+          hid: 'keywords',
+          name: 'keywords',
+          content: this.blogPost.title.split(' ').join(',') || this.blogPost.title
+        },
+        {
           hid: 'og:title',
           property: 'og:title',
           content: `${this.blogPost.title} | n2ptune Web Tech-Dev`
