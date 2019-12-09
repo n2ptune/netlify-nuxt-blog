@@ -1,5 +1,5 @@
 const generateRoutes = () => {
-  const fs = require('fs')ㄴ
+  const fs = require('fs')
   const routeObj = fs.readdirSync('./posts/').map(file => {
     return {
       // .json 확장자 명을 지우고 파일 이름 전체 출력
