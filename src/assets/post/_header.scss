@@ -4,6 +4,8 @@
   height: 58px;
   border-bottom: 1px solid #eee;
   z-index: 9999;
+  position: fixed;
+  top: 0;
 }
 .header {
   &-container {
