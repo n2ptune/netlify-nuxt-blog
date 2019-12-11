@@ -83,12 +83,10 @@ $avatar-size: 40px;
 
       & > .tag-name > a {
         color: inherit;
-        font-weight: bold;
         padding-bottom: 2.5px;
 
         &:hover {
-          color: black;
-          border-bottom: 1px dashed black;
+          font-weight: bold;
         }
       }
 
@@ -96,9 +94,9 @@ $avatar-size: 40px;
         color: white;
         margin-left: 3px;
         padding: 1px 7px;
-        background-color: orange;
+        background-color: orangered;
         border-radius: 100%;
-        font-size: 0.875rem;
+        font-size: 0.8rem;
       }
     }
   }

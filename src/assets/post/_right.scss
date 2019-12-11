@@ -3,6 +3,8 @@
   opacity: 0;
   position: absolute;
   transition: opacity 0.65s;
+  border-left: 2px solid #eee;
+  width: 100%;
 }
 .content-title {
   color: #803efb;
@@ -34,6 +36,14 @@ li > a {
 .active-content {
   color: #803efb;
   text-shadow: 0 0 0.01px #803efb, 0 0 0.01px #803efb, 0 0 0.01px #803efb;
-  border-bottom: 1px dashed #803efb;
-  padding-bottom: 1.5px;
+  display: block;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    display: inline-block;
+    left: -2px;
+    height: 25px;
+    border-left: 3px solid #803efb;
+  }
 }

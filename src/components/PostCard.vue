@@ -22,7 +22,7 @@
         </nuxt-link>
         <b-tooltip
           :label="dateToDetailDay(post.date)"
-          type="is-info"
+          type="is-black"
           :delay="250"
           animated
         >
