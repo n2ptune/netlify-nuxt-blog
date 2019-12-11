@@ -1,7 +1,7 @@
 <template>
   <article class="title-wrapper">
     <h3 class="is-size-3 has-text-centered has-text-weight-bold">
-      {{ currentPost.title }}
+      {{ displayTitle }}
     </h3>
     <p class="is-size-6 has-text-centered">
       {{ dateToDay }}
@@ -26,6 +26,11 @@ export default {
       return dayjs(this.currentPost.date)
         .locale('en')
         .format('LL')
+    },
+    displayTitle() {
+      return this.currentPost.series
+        ? `[${this.currentPost.series}] - ${this.currentPost.title}`
+        : this.currentPost.title
     }
   }
 }
