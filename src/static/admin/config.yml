@@ -4,8 +4,8 @@ backend:
 
 media_folder: src/static/img
 public_folder: /img
-site_url: https://n2ptune.xyz
-display_url: https://n2ptune.xyz
+site_url: https://n2ptune.xyz/
+display_url: https://n2ptune.xyz/
 locale: 'ko'
 
 collections:
