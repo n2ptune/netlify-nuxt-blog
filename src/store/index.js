@@ -18,6 +18,9 @@ export const getters = {
     return state.blogPosts.filter((post) => {
       return post.tags.includes(tag)
     })
+  },
+  getHasSeriesPosts(state) {
+    return state.blogPosts.filter(post => post.hasOwnProperty('series'))
   }
 }
 
@@ -32,7 +35,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit({ commit }) {
+  async nuxtServerInit({ commit, getters }) {
     let files = await require.context('@@/posts', false, /\.json$/)
     let tags = []
     let blogPosts = files.keys().map(key => {
@@ -46,5 +49,6 @@ export const actions = {
     })
     await commit('setBlogPosts', blogPosts)
     await commit('tag/setTags', tags)
+    await commit('series/setHasSeriesPosts', getters.getHasSeriesPosts)
   }
 }

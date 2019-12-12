@@ -73,6 +73,24 @@ $avatar-size: 40px;
   }
 }
 
+.menu-label-custom {
+  letter-spacing: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.menu-list-item-custom {
+  &::v-deep a.is-active {
+    background-color: #803efb;
+    color: #fff;
+  }
+  &::v-deep ul li a:hover {
+    background-color: #803efb;
+    color: #fff;
+  }
+}
+
 .content-tag {
   & > .tag-wrapper {
     padding-left: 0.5rem;

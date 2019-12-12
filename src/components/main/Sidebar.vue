@@ -27,7 +27,7 @@
     </div>
     <div class="sidebar-contents mt-1">
       <div class="content-tag">
-        <div class="content-header">
+        <div class="menu-label-custom">
           태그
         </div>
         <ul class="tag-wrapper">
@@ -41,11 +41,31 @@
           </li>
         </ul>
       </div>
-      <div class="content-series">
-        <div class="content-header">
-          시리즈
+      <client-only>
+        <div class="content-series" v-if="series">
+          <b-menu>
+            <b-menu-list>
+              <template v-slot:label>
+                <p class="menu-label-custom">시리즈</p>
+              </template>
+              <b-menu-item
+                v-for="content in series"
+                :key="content.seriesName"
+                :label="content.seriesName"
+                class="menu-list-item-custom"
+              >
+                <b-menu-item
+                  v-for="contentOfPost in content.posts"
+                  :key="contentOfPost.title"
+                  :label="contentOfPost.title"
+                  :to="`/posts/${contentOfPost.slug}`"
+                  tag="nuxt-link"
+                />
+              </b-menu-item>
+            </b-menu-list>
+          </b-menu>
         </div>
-      </div>
+      </client-only>
     </div>
   </aside>
 </template>
@@ -61,7 +81,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      tags: 'tag/getTags'
+      tags: 'tag/getTags',
+      series: 'series/getSeries'
     })
   },
   methods: {
@@ -82,6 +103,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/assets/main/_sidebar';
-</style>
+<style lang="scss" src="@/assets/main/_sidebar.scss" scoped></style>
