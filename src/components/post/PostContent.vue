@@ -12,7 +12,7 @@
       v-html="!convertedHTML ? $md.render(markdown) : convertedHTML"
     ></div>
     <div class="content-loading" v-if="!loadedContents">
-      <vcl-code v-for="i in 6" :key="i" />
+      <vcl-code v-for="i in 6" :key="i" :speed="1" secondary="#d0d0d0" />
     </div>
   </article>
 </template>
