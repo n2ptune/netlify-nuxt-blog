@@ -46,6 +46,9 @@ export default {
   },
   components: {
     PostCard: () => import('@/components/PostCard')
+  },
+  mounted() {
+    console.log(this.$buefy.loading);
   }
 }
 </script>

@@ -2,12 +2,15 @@
   <header class="main-header">
     <div class="header-content-container">
       <div class="header-drawer mr-auto">
-        <button class="drawer-button" @click="drawer">
+        <button class="drawer-button is-hidden-desktop" @click="drawer">
           <b-icon :icon="handleDrawer ? 'arrow-left' : 'arrow-right'" />
         </button>
       </div>
-      <div class="header-title ml-auto">
+      <div class="header-title mx-auto">
         n2ptune-dev
+      </div>
+      <div class="header-nav ml-auto">
+        TEST
       </div>
     </div>
   </header>

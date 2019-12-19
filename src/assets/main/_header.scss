@@ -2,16 +2,15 @@ $pd-container: 10px;
 
 .main-header {
   display: flex;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 19;
   align-items: center;
   width: 100%;
   height: 58px;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #ddd;
   background-color: white;
-  box-shadow: 3px 0 15px 5px rgba(0, 0, 0, 0.12);
 }
 .header-content-container {
   padding-left: $pd-container;
@@ -33,5 +32,17 @@ $pd-container: 10px;
   &:focus {
     border: none;
     outline: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-header {
+    box-shadow: 3px 0 15px 5px rgba(0, 0, 0, 0.12);
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .main-header {
+    box-shadow: 3px 0 15px 5px rgba(0, 0, 0, 0.12);
   }
 }

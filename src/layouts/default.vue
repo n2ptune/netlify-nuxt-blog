@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <Header class="is-hidden-desktop" />
+    <Header />
     <Sidebar class="is-hidden-touch" />
     <nuxt />
   </div>
