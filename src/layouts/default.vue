@@ -1,7 +1,7 @@
 <template>
   <div id="wrapper">
     <Header />
-    <Sidebar class="is-hidden-touch" />
+    <!-- <Sidebar class="is-hidden-touch" /> -->
     <nuxt />
   </div>
 </template>

@@ -74,6 +74,9 @@ export default {
   },
   created() {
     this.setCurrentPost(this.blogPost)
+  },
+  beforeDestroy() {
+    this.setCurrentPost(null)
   }
 }
 </script>

@@ -64,7 +64,8 @@ export default {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'web, front-end, HTML5, CSS3, 웹, javascript, react, vue, nuxt, firebase, node.js'
+        content:
+          'web, front-end, HTML5, CSS3, 웹, javascript, react, vue, nuxt, firebase, node.js'
       },
       {
         'http-equiv': 'Content-Type',
@@ -149,7 +150,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/utils/_utils.scss', '@/assets/variables.scss'],
+  css: [
+    '@/assets/utils/_utils.scss',
+    '@/assets/variables.scss',
+    '@/assets/utils/_global.scss'
+  ],
   /*
    ** Plugins to load before mounting the App
    */

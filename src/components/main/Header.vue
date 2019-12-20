@@ -1,15 +1,11 @@
 <template>
   <header class="main-header">
     <div class="header-content-container">
-      <div class="header-drawer mr-auto" v-if="$breakpoints.sMd">
-        <button class="drawer-button" @click="drawer">
-          <b-icon :icon="handleDrawer ? 'arrow-left' : 'arrow-right'" />
-        </button>
+      <div class="header-title" :class="$breakpoints.sMd ? 'mr-auto' : 'ml-auto mr-2'">
+        <img :src="avatarURL" alt="" class="header-avatar">
+        {{ getCurrentPost ? getCurrentPost.title : '웹 기술/개발 블로그' }}
       </div>
-      <div class="header-title">
-        n2ptune-dev-blog
-      </div>
-      <div class="header-nav ml-auto" v-if="$breakpoints.lLg">
+      <div class="header-nav mr-auto" v-if="$breakpoints.lLg">
         <ul class="nav-wrapper">
           <li class="nav" v-for="route in routes" :key="route.name">
             <nuxt-link :to="route.to">
@@ -26,10 +22,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   data() {
     return {
-      handleDrawer: false,
       routes: [
         {
           name: 'Home',
@@ -38,23 +35,25 @@ export default {
         {
           name: 'Tags',
           to: '/tags'
+        },
+        {
+          name: 'Series',
+          to: '/series'
+        },
+        {
+          name: 'Contact',
+          to: '/contact'
         }
-      ]
+      ],
+      avatarURL: ''
     }
   },
-  methods: {
-    drawer() {
-      const sidebar = document.querySelector('.sidebar')
-      // 열려있으면
-      if (this.handleDrawer) {
-        sidebar.classList.remove('mobile-show')
-        sidebar.classList.add('mobile-show-leave')
-      } else {
-        sidebar.classList.add('mobile-show')
-        sidebar.classList.remove('mobile-show-leave')
-      }
-      this.handleDrawer = !this.handleDrawer
-    }
+  computed: {
+    ...mapGetters(['getCurrentPost'])
+  },
+  async created() {
+    const { data } = await this.$axios.get('https://api.github.com/users/n2ptune')
+    this.avatarURL = data.avatar_url
   }
 }
 </script>

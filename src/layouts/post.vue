@@ -1,11 +1,7 @@
 <template>
-  <!-- Root -->
   <div id="root">
-    <!-- Header Component -->
-    <PostHeader />
-    <!-- Main Wrapper -->
+    <Header />
     <main id="root-main">
-      <!-- Nuxt View posts/_blog, includes section, article, markdown element and Side Components -->
       <nuxt />
     </main>
   </div>
@@ -14,7 +10,7 @@
 <script>
 export default {
   components: {
-    PostHeader: () => import('@/components/post/PostHeader'),
+    Header: () => import('@/components/main/Header')
   }
 }
 </script>
