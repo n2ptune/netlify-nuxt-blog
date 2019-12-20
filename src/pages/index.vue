@@ -35,7 +35,7 @@ export default {
           hid: 'og:description',
           property: 'og:description',
           content: '웹 프론트엔드 영역 기술/개발 블로그'
-        },
+        }
       ]
     }
   },
@@ -46,9 +46,6 @@ export default {
   },
   components: {
     PostCard: () => import('@/components/PostCard')
-  },
-  mounted() {
-    console.log(this.$buefy.loading);
   }
 }
 </script>

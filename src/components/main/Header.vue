@@ -1,16 +1,25 @@
 <template>
   <header class="main-header">
     <div class="header-content-container">
-      <div class="header-drawer mr-auto">
-        <button class="drawer-button is-hidden-desktop" @click="drawer">
+      <div class="header-drawer mr-auto" v-if="$breakpoints.sMd">
+        <button class="drawer-button" @click="drawer">
           <b-icon :icon="handleDrawer ? 'arrow-left' : 'arrow-right'" />
         </button>
       </div>
-      <div class="header-title mx-auto">
-        n2ptune-dev
+      <div class="header-title">
+        n2ptune-dev-blog
       </div>
-      <div class="header-nav ml-auto">
-        TEST
+      <div class="header-nav ml-auto" v-if="$breakpoints.lLg">
+        <ul class="nav-wrapper">
+          <li class="nav" v-for="route in routes" :key="route.name">
+            <nuxt-link :to="route.to">
+              {{ route.name }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </div>
+      <div class="header-nav-mobile ml-auto" v-else>
+        asd
       </div>
     </div>
   </header>
@@ -20,7 +29,17 @@
 export default {
   data() {
     return {
-      handleDrawer: false
+      handleDrawer: false,
+      routes: [
+        {
+          name: 'Home',
+          to: '/'
+        },
+        {
+          name: 'Tags',
+          to: '/tags'
+        }
+      ]
     }
   },
   methods: {

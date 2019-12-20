@@ -23,6 +23,7 @@
     "dayjs": "^1.8.17",
     "markdown-it-highlightjs": "^3.0.0",
     "nuxt": "^2.0.0",
+    "nuxt-breakpoints": "^1.1.9",
     "nuxt-buefy": "^0.3.17",
     "vue-content-loading": "^1.6.0"
   },

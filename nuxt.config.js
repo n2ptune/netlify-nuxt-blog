@@ -168,6 +168,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/markdownit',
     'nuxt-buefy',
+    'nuxt-breakpoints',
     '@nuxtjs/sitemap',
     '@nuxtjs/google-adsense'
   ],
@@ -178,6 +179,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    extractCSS: true,
     extend(config, ctx) {}
   },
   srcDir: 'src/',
@@ -204,5 +206,9 @@ export default {
     id: 'ca-pub-3441377677018772',
     analyticsUacct: 'UA-153631680-1',
     analyticsDomainName: 'n2ptune.xyz'
+  },
+  breakpoints: {
+    lg: 1023,
+    xl: 1408
   }
 }
