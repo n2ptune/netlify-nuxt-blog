@@ -141,12 +141,11 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: {
-    color: '#8388f5',
-    failedColor: '#e71db5',
-    height: '3px',
-    duration: 5000
-  },
+  loading: '@/components/Loading.vue',
+  // color: '#8388f5',
+  // failedColor: '#e71db5',
+  // height: '3px',
+  // duration: 5000
   /*
    ** Global CSS
    */
