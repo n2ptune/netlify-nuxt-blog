@@ -1,8 +1,11 @@
 <template>
   <header class="main-header">
     <div class="header-content-container">
-      <div class="header-title" :class="$breakpoints.sMd ? 'mr-auto' : 'ml-auto mr-2'">
-        <img :src="avatarURL" alt="" class="header-avatar">
+      <div
+        class="header-title"
+        :class="$breakpoints.sMd ? 'mr-auto' : 'ml-auto mr-2'"
+      >
+        <img :src="avatarURL" alt="" class="header-avatar" />
         {{ getCurrentPost ? getCurrentPost.title : '웹 기술/개발 블로그' }}
       </div>
       <div class="header-nav mr-auto" v-if="$breakpoints.lLg">
@@ -15,7 +18,14 @@
         </ul>
       </div>
       <div class="header-nav-mobile ml-auto" v-else>
-        asd
+        <b-button
+          class="mobile-button"
+          size="is-medium"
+          icon-right="expand-all"
+          :outlined="true"
+          :rounded="true"
+          @click="mobileButton"
+        />
       </div>
     </div>
   </header>
@@ -51,8 +61,22 @@ export default {
   computed: {
     ...mapGetters(['getCurrentPost'])
   },
+  methods: {
+    mobileButton(event) {
+      this.$buefy.modal.open({
+        parent: this,
+        component: () => import('@/components/main/HeaderMobileMenu'),
+        hasModalCard: true,
+        props: {
+          routes: this.routes
+        }
+      })
+    }
+  },
   async created() {
-    const { data } = await this.$axios.get('https://api.github.com/users/n2ptune')
+    const { data } = await this.$axios.get(
+      'https://api.github.com/users/n2ptune'
+    )
     this.avatarURL = data.avatar_url
   }
 }

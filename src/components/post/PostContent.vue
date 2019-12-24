@@ -12,13 +12,31 @@
       v-html="!convertedHTML ? $md.render(markdown) : convertedHTML"
     ></div>
     <div class="content-loading" v-if="!loadedContents">
-      <vcl-code v-for="i in 6" :key="i" :speed="1" secondary="#d0d0d0" />
+      <vue-content-loading>
+        <rect x="0" y="0" rx="3" ry="3" width="200" height="10" />
+        <rect x="210" y="0" rx="3" ry="3" width="150" height="10" />
+        <rect x="370" y="0" rx="3" ry="3" width="15" height="10" />
+        <rect x="0" y="20" rx="3" ry="3" width="70" height="10" />
+        <rect x="80" y="20" rx="3" ry="3" width="150" height="10" />
+        <rect x="240" y="20" rx="3" ry="3" width="70" height="10" />
+        <rect x="320" y="20" rx="3" ry="3" width="30" height="10" />
+        <rect x="360" y="20" rx="3" ry="3" width="40" height="10" />
+        <rect x="0" y="40" rx="3" ry="3" width="130" height="10" />
+        <rect x="140" y="40" rx="3" ry="3" width="70" height="10" />
+        <rect x="220" y="40" rx="3" ry="3" width="110" height="10" />
+        <rect x="340" y="40" rx="3" ry="3" width="20" height="10" />
+        <rect x="370" y="40" rx="3" ry="3" width="25" height="10" />
+        <rect x="0" y="60" rx="3" ry="3" width="50" height="10" />
+        <rect x="60" y="60" rx="3" ry="3" width="140" height="10" />
+        <rect x="210" y="60" rx="3" ry="3" width="70" height="10" />
+        <rect x="290" y="60" rx="3" ry="3" width="50" height="10" />
+      </vue-content-loading>
     </div>
   </article>
 </template>
 
 <script>
-import { VclCode } from 'vue-content-loading'
+import VueContentLoading from 'vue-content-loading'
 
 export default {
   data() {
@@ -31,7 +49,7 @@ export default {
   components: {
     PostLeftSide: () => import('@/components/post/PostLeftSide'),
     PostRightSide: () => import('@/components/post/PostRightSide'),
-    VclCode
+    VueContentLoading
   },
   props: {
     markdown: {
