@@ -1,13 +1,14 @@
 <template>
   <section class="page-container mx-auto">
     <!-- <adsbygoogle /> -->
-    <PostTitle v-if="$store.state.currentPost" />
+    <PostTitle v-if="currentPost" />
+    <SeriesList v-if="currentPost.series" />
     <PostContent :markdown="blogPost.body" />
   </section>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapMutations, mapGetters } from 'vuex'
 
 export default {
   async asyncData({ params, payload }) {
@@ -21,7 +22,8 @@ export default {
   layout: 'post',
   components: {
     PostContent: () => import('@/components/post/PostContent'),
-    PostTitle: () => import('@/components/post/PostTitle')
+    PostTitle: () => import('@/components/post/PostTitle'),
+    SeriesList: () => import('@/components/post/SeriesList')
   },
   head() {
     return {
@@ -68,6 +70,11 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    ...mapGetters({
+      currentPost: 'getCurrentPost'
+    })
   },
   methods: {
     ...mapMutations(['setCurrentPost'])

@@ -90,6 +90,11 @@ export default {
       }
     })
 
+    // 이미지 가운데 정렬
+    div.querySelectorAll('p').forEach(elem => {
+      if(elem.firstChild.tagName === 'IMG') elem.style.textAlign = 'center'
+    })
+
     // 변환 끝
     this.converted(div.outerHTML)
   }

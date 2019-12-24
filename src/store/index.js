@@ -14,13 +14,16 @@ export const getters = {
   getCurrentPost(state) {
     return state.currentPost
   },
-  getTaggedPosts: (state) => (tag) => {
-    return state.blogPosts.filter((post) => {
+  getTaggedPosts: state => tag => {
+    return state.blogPosts.filter(post => {
       return post.tags.includes(tag)
     })
   },
   getHasSeriesPosts(state) {
     return state.blogPosts.filter(post => post.hasOwnProperty('series'))
+  },
+  getSeriesFromName: state => name => {
+    return state.blogPosts.filter(elem => elem.series === name)
   }
 }
 

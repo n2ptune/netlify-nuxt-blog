@@ -19,8 +19,14 @@
   }
 }
 // FullHD
-@media screen and (min-width: 1408px) {
+@media screen and (min-width: 1408px) and (max-width: 1608px) {
   .page-container {
-    width: 34%;
+    width: 50%;
+  }
+}
+// Higher than fhd
+@media screen and (min-width: 1609px) {
+  .page-container {
+    width: 35%;
   }
 }
