@@ -4,11 +4,15 @@
     <PostTitle v-if="currentPost" />
     <SeriesList v-if="currentPost.series" />
     <PostContent :markdown="blogPost.body" />
-    <vue-disqus
-      shortname="n2ptune-xyz"
-      :identifier="this.slug"
-      :url="`https://n2ptune.xyz/posts/${this.slug}/`"
-    />
+    <client-only>
+      <div class="comments">
+        <vue-disqus
+          shortname="n2ptune-xyz"
+          :identifier="this.slug"
+          :url="`https://n2ptune.xyz/posts/${this.slug}/`"
+        />
+      </div>
+    </client-only>
   </section>
 </template>
 
