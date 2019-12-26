@@ -4,6 +4,11 @@
     <PostTitle v-if="currentPost" />
     <SeriesList v-if="currentPost.series" />
     <PostContent :markdown="blogPost.body" />
+    <vue-disqus
+      shortname="n2ptune-xyz"
+      :identifier="this.slug"
+      :url="`https://n2ptune.xyz/posts/${this.slug}/`"
+    />
   </section>
 </template>
 
@@ -44,7 +49,8 @@ export default {
         {
           hid: 'keywords',
           name: 'keywords',
-          content: this.blogPost.title.split(' ').join(',') || this.blogPost.title
+          content:
+            this.blogPost.title.split(' ').join(',') || this.blogPost.title
         },
         {
           hid: 'og:title',
