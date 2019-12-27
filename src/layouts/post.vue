@@ -4,13 +4,15 @@
     <main id="root-main">
       <nuxt />
     </main>
+    <Footer />
   </div>
 </template>
 
 <script>
 export default {
   components: {
-    Header: () => import('@/components/main/Header')
+    Header: () => import('@/components/main/Header'),
+    Footer: () => import('@/components/post/PostFooter')
   }
 }
 </script>
