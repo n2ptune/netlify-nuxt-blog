@@ -5,8 +5,8 @@
         class="header-title"
         :class="$breakpoints.sMd ? 'mr-auto' : 'ml-auto mr-2'"
       >
-        <img :src="avatarURL" alt="" class="header-avatar" />
-        {{ getCurrentPost ? getCurrentPost.title : '웹 기술/개발 블로그' }}
+        <Avatar :width="30" :style="{ marginRight: '9px' }" />
+        웹 기술/개발 블로그
       </div>
       <div class="header-nav mr-auto" v-if="$breakpoints.lLg">
         <ul class="nav-wrapper">
@@ -32,8 +32,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
   data() {
     return {
@@ -58,8 +56,8 @@ export default {
       avatarURL: ''
     }
   },
-  computed: {
-    ...mapGetters(['getCurrentPost'])
+  components: {
+    Avatar: () => import('@/components/Avatar')
   },
   methods: {
     mobileButton(event) {
@@ -72,12 +70,6 @@ export default {
         }
       })
     }
-  },
-  async created() {
-    const { data } = await this.$axios.get(
-      'https://api.github.com/users/n2ptune'
-    )
-    this.avatarURL = data.avatar_url
   }
 }
 </script>

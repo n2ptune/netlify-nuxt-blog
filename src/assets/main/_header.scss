@@ -76,13 +76,6 @@ $pd-container: 10px;
   }
 }
 
-.header-avatar {
-  width: 30px;
-  height: auto;
-  border-radius: 100%;
-  margin-right: 9px;
-}
-
 .nuxt-link-exact-active {
   color: #803efb !important;
   text-shadow: 0 0 0.01px #803efb, 0 0 0.01px #803efb, 0 0 0.01px #803efb;
@@ -102,8 +95,9 @@ $pd-container: 10px;
 
 .mobile-button {
   border: none;
-  
-  &:focus, &:active {
+
+  &:focus,
+  &:active {
     outline: none;
   }
 }
