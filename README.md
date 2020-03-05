@@ -6,3 +6,5 @@
 [![GitHub license](https://img.shields.io/github/license/n2ptune/netlify-nuxt-blog)](https://github.com/n2ptune/netlify-nuxt-blog/blob/master/LICENSE)
 
 Deploy personal blog to netlify with Nuxt
+
+Moved [https://github.com/n2ptune/dev-blog](https://github.com/n2ptune/dev-blog)
